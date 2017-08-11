@@ -23,9 +23,28 @@ describe('Main page', () => {
     var icon = browser.$('.fa.fa-clipboard');
     helper.waitForAndClick(icon, helper.waitForVisible);
 
-    browser.sleep(10000);
+    browser.sleep(1000);
     expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/pasties/page/1');
   });
+
+  it('should click on the header', () => {
+    var header = require('../po/ui/Header.js');
+    // var header = new Header();
+    header.clickLogo();
+    browser.sleep(1000);
+    expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/');
+
+
+    header.clickPasties();
+    browser.sleep(1000);
+    expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/pasties/page/1');
+
+    header.clickDocumentation();
+    browser.sleep(1000);
+    expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/info');
+
+  });
+
 
 
 });
