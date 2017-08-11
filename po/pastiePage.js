@@ -10,6 +10,7 @@ class PastiePage extends BasePage{
 		this.copyButton=element(by.buttonText('Copy'));
 		this.contentBox=element(by.css('div.images'));
 		this.descText=element(by.css('input.description'));
+		
 	}
 }
 module.exports=PastiePage;
