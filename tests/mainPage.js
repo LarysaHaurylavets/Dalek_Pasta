@@ -30,7 +30,8 @@ describe('Main page', () => {
     // browser.sleep(1000);
     // expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/pasties/page/1');
     var BasePage = require('../po/BasePage');
-    var main = new BasePage();
+    var HomePage = require('../po/HomePage.js');
+    var main = new HomePage();
     main.visit();
     expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/');
 
