@@ -1,0 +1,15 @@
+{
+  "name": "M4.2_protractor-jasmin",
+  "version": "1.0.0",
+  "main": "spec.js",
+  "dependencies": {
+    "protractor": "^5.1.0"
+  },
+  "scripts": {
+    "start" : "webdriver-manager start",
+    "test": "protractor conf.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
