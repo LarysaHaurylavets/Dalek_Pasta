@@ -12,20 +12,20 @@ class PastiePage extends BasePage{
 		this.descText=element(by.css('input.description'));
 	}
 
-	// getLinkField(){
-	// 	return this.linkField;
-	// }
+	getLinkField(){
+		return this.linkField.getText();
+	}
 
-	// getCopyButton(){
-	// 	return this.copyButton;
-	// }
+	getLinkCopyButton(){
+		return this.copyButton.clik();
+	}
 
 	// getContentBox(){
 	// 	return this.contentBox;
 	// }
 
-	// getDescText(){
-	// 	return this.descText;
-	// }
+	getDescText(){
+		return this.descText.getText();
+	}
 }
 module.exports=PastiePage;
