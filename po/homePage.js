@@ -14,8 +14,12 @@ class HomePage extends BasePage {
             expiration1m: element(by.xpath('//select/option[6]'))
         }
     }
-    setExpiration(expiration){
-        expiration.click();
+   setExpirationDate(expiration){
+        return expiration.click();
+    }
+    // test it
+    setDescription(text){
+        return descriptionField.sendKeys(text);
     }
 }
 module.exports = HomePage;
