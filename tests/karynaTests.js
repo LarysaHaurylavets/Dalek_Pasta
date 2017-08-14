@@ -10,7 +10,7 @@ var main = new HomePage();
 var PastiesPage = require('../po/pastiesPage.js');
 var pastiesPage = new PastiesPage();
 
-describe('epiration date tests', () => {
+xdescribe('epiration date tests', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);

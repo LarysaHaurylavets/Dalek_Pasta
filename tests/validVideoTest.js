@@ -4,7 +4,7 @@ var EC = protractor.ExpectedConditions;
 var HomePage = require('../po/HomePage.js');
 var main = new HomePage();
 
-describe('upload valid video', () => {
+xdescribe('upload valid video', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);

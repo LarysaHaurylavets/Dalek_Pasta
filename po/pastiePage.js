@@ -10,7 +10,8 @@ class PastiePage extends BasePage{
 		this.linkField=element(by.css('p.url'));		
 		this.copyButton=element(by.css('copy-to-clipboard'));
 		this.contentBox=element(by.css('div.images'));
-		this.descText=element(by.css('input.description'));
+		this.descText=element.all(by.css('input')).first();
+		this.syntaxLabel=element(by.css('span.on-text'));
 	}
 
 	getLinkField(){
@@ -30,3 +31,5 @@ class PastiePage extends BasePage{
 	}
 }
 module.exports=PastiePage;
+
+

@@ -4,7 +4,7 @@ var EC = protractor.ExpectedConditions;
 var Helper = require('../support/Helper.js');
 
 // TEST (wull be removed)
-describe('Main page', () => {
+xdescribe('Main page', () => {
 
   beforeAll(() => {
     console.log("beforeAll");
