@@ -7,14 +7,10 @@ var EC = protractor.ExpectedConditions;
 var HomePage = require('../po/HomePage.js');
 var main = new HomePage();
 
-<<<<<<< HEAD
 var PastiesPage = require('../po/pastiesPage.js');
 var pastiesPage = new PastiesPage();
 
 describe('epiration date tests', () => {
-=======
-xdescribe('epiration date tests', () => {
->>>>>>> 03cfe573c2759fa3e3e99d87d3fa7b9e8ffdbfd1
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
@@ -25,13 +21,6 @@ xdescribe('epiration date tests', () => {
     });
 
     beforeEach(() => {
-<<<<<<< HEAD
-=======
-    });
-
-    xit('should open the main page', () => {
-
->>>>>>> 03cfe573c2759fa3e3e99d87d3fa7b9e8ffdbfd1
         main.visit();
     });
 
