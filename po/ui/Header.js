@@ -1,5 +1,3 @@
-var Helper = require('../../support/helper.js')
-var helper = new Helper();
 
 class Header {
 
