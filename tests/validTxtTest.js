@@ -5,7 +5,7 @@ var HomePage=require('../po/homePage.js');
 var main = new HomePage();
 
 
-describe('upload file on main page', () => {
+xdescribe('upload file on main page', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
@@ -26,6 +26,7 @@ describe('upload file on main page', () => {
 
     it('should upload valid txt file', function(){        
         main.uploadUI('txt');
+        expect(main.shareButton.isPresent()).toBe(true);
     }); 
 
 

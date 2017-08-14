@@ -5,7 +5,7 @@ var HomePage=require('../po/homePage.js');
 var main = new HomePage();
 
 
-xdescribe('upload file on main page', () => {
+describe('upload file on main page', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
@@ -23,8 +23,10 @@ xdescribe('upload file on main page', () => {
              
     }); 
 
-    it('should upload valid image file', function(){        
+    it('should upload valid image file', function(){         
         main.uploadUI('pic');
+        expect(main.shareButton.isPresent()).toBe(true);
+
     }); 
 
 

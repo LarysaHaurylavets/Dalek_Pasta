@@ -5,6 +5,7 @@ class HomePage extends BasePage {
     constructor() {
         super();
         this.uploadButton = element(by.css('.share-button'));
+        this.shareButton = element(by.cssContainingText('.share-button', 'Share'));
         this.descriptionField = element(by.css('.input-description'));
         this.contentBox = element(by.css('.workplace'));
         this.invalidSizeAlert = element(by.css('.toast-warning'));
