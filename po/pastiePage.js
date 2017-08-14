@@ -25,7 +25,7 @@ class PastiePage extends BasePage{
 	// }
 
 	getDescText(){
-		return this.descText.getText();
+		return this.descText.getAttribute('value');
 	}
 }
 module.exports=PastiePage;
