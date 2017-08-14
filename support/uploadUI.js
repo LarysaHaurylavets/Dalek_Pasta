@@ -9,7 +9,7 @@ var path = require('path');
 
 var filePaths = {
 	'pic': './filesToUpload/pic.jpg',
-	'txt': '',
+	'txt': './filesToUpload/text.txt',
 	'video': '',
 	'invalid-pic': './filesToUpload/5mb.jpg'
 };
