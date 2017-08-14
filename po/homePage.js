@@ -19,7 +19,7 @@ class HomePage extends BasePage {
     }
     // test it
     setDescription(text){
-        return descriptionField.sendKeys(text);
+        return this.descriptionField.sendKeys(text);
     }
 }
 module.exports = HomePage;
