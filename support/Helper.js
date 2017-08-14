@@ -5,7 +5,6 @@ var TIMEOUT = 5000;
 
 class Helper {
 
-
   // WAITS
 
     waitForPresence (element) {
@@ -67,4 +66,4 @@ class Helper {
 
 }
 
-module.exports = Helper;
+module.exports = new Helper();
