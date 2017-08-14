@@ -6,7 +6,7 @@ class PastiePage extends BasePage{
 
 	constructor(){
 		super();
-		this.linkField=element(by.css('p.url')); 
+		this.linkField=element(by.css('p.url'));
 		this.copyButton=element(by.buttonText('Copy'));
 		this.contentBox=element(by.css('div.images'));
 		this.descText=element(by.css('input.description'));
@@ -17,7 +17,7 @@ class PastiePage extends BasePage{
 	}
 
 	getLinkCopyButton(){
-		return this.copyButton.clik();
+		return this.copyButton.click();
 	}
 
 	// getContentBox(){
