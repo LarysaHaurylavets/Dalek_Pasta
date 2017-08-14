@@ -6,8 +6,9 @@ class PastiePage extends BasePage{
 
 	constructor(){
 		super();
-		this.linkField=element(by.css('p.url'));
-		this.copyButton=element(by.buttonText('Copy'));
+		this.url='pasties/date7kny';
+		this.linkField=element(by.css('p.url'));		
+		this.copyButton=element(by.css('copy-to-clipboard'));
 		this.contentBox=element(by.css('div.images'));
 		this.descText=element(by.css('input.description'));
 	}
@@ -16,13 +17,13 @@ class PastiePage extends BasePage{
 		return this.linkField.getText();
 	}
 
-	getLinkCopyButton(){
+	clickCopyButton(){
 		return this.copyButton.click();
 	}
 
-	// getContentBox(){
-	// 	return this.contentBox;
-	// }
+	getLinkCopyButton(){
+		return this.copyButton.getAttribute('copy-to-clipboard');
+	}
 
 	getDescText(){
 		return this.descText.getAttribute('value');

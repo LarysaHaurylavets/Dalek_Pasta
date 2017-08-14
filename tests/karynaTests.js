@@ -4,7 +4,7 @@ var EC = protractor.ExpectedConditions;
 var HomePage = require('../po/HomePage.js');
 var main = new HomePage();
 
-describe('epiration date tests', () => {
+xdescribe('epiration date tests', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
@@ -17,7 +17,7 @@ describe('epiration date tests', () => {
     beforeEach(() => {
     });
 
-    it('should open the main page', () => {
+    xit('should open the main page', () => {
 
         main.visit();
         expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/');
