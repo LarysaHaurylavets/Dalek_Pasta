@@ -23,17 +23,17 @@ class PastiesPage extends BasePage {
     }
 
     getExp(pastieID) {
-        let pastieLine = getPastieLine(pastieID);
+        let pastieLine = this.getPastieLine(pastieID);
         return this.pastiesExp.get(pastieLine).getText();
     }
 
     choosePastie(pastieID) {
-    	let pastieLine = getPastieLine(pastieID);
+    	let pastieLine = this.getPastieLine(pastieID);
     	return this.pastiesID.get(pastieLine).click();
     }
 
     getLinkCopyButton(pastieID) {
-    	let pastieLine = getPastieLine(pastieID);
+    	let pastieLine = this.getPastieLine(pastieID);
     	return this.pastiesCopyButton.get(pastieLine).getAttribute('copy-to-clipboard');
     }
 

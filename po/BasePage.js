@@ -19,5 +19,9 @@ class BasePage {
     return browser.getTitle();
   }
 
+  getUrl() {
+      return browser.getCurrentUrl();
+  }
+
 }
 module.exports = BasePage;

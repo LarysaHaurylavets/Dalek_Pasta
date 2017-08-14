@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "main": "spec.js",
   "scripts": {
-    "prestart" : "webdriver-manager update",
-    "start" : "webdriver-manager start",
+    "prestart": "webdriver-manager update",
+    "start": "webdriver-manager start",
     "test": "protractor conf.js"
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "moment": "^2.18.1"
+  }
 }
