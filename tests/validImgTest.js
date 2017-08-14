@@ -16,8 +16,7 @@ xdescribe('upload file on main page', () => {
 
     afterEach(() => {
         browser.sleep(2000);
-    });
-  
+    });  
 
     it('should upload valid image file', function(){         
         main.uploadUI('pic');
