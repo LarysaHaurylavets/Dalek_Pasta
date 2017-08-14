@@ -5,6 +5,7 @@ class HomePage extends BasePage {
         super();
         this.uploadButton = element(by.css('.share-button'));
         this.descriptionField = element(by.css('.input-description'));
+        this.contentBox = element(by.css('.workplace'));
         this.expirationDropdown = {
             expiration10min: element(by.xpath('//select/option[1]')),
             expiration1d: element(by.xpath('//select/option[2]')),
@@ -17,7 +18,6 @@ class HomePage extends BasePage {
    setExpirationDate(expiration){
         return expiration.click();
     }
-    // test it
     setDescription(text){
         return this.descriptionField.sendKeys(text);
     }
