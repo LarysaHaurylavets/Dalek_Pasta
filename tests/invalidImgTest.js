@@ -4,7 +4,7 @@ var EC = protractor.ExpectedConditions;
 var HomePage = require('../po/HomePage.js');
 var main = new HomePage();
 
-describe('epiration date tests', () => {
+describe('invalid files tests', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
@@ -17,13 +17,12 @@ describe('epiration date tests', () => {
     beforeEach(() => {
     });
 
-    it('should open the main page', () => {
-
+    it('should show an alert', () => {
         main.visit();
         expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/');
 
-        main.setExpirationDate('10min');
-        main.setDescription('test');
-        main.uploadUI('./support/filesToUpload/5mb-img.jpg');
+        // main.setExpirationDate('2w');
+        // main.setDescription('test');
+        main.uploadUI('invalid-pic');
     });
 });

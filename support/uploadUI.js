@@ -10,7 +10,8 @@ var path = require('path');
 var filePaths = {
 	'pic': './filesToUpload/pic.jpg',
 	'txt': '',
-	'video': ''
+	'video': '',
+	'invalid-pic': './filesToUpload/5mb.jpg'
 };
 
 var upload = function(fileType) {
