@@ -16,7 +16,6 @@ xdescribe('valid video tests', () => {
         browser.waitForAngularEnabled(false);
         browser.driver.manage().window().maximize();
     });
-
     beforeEach(() => {
         main.visit();
         expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/');
