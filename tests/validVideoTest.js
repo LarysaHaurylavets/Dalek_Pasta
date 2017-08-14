@@ -10,14 +10,15 @@ describe('upload valid video', () => {
         browser.waitForAngularEnabled(false);
     });
 
-    beforeEach(() => {
+    it('should upload a video', () => {
         main.visit();
         expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/');
-    });
-
-    it('should upload a video', () => {
         main.uploadUI('video');
         expect(main.shareButton.isPresent()).toBe(true);
-        // expect(main.invalidSizeAlert.getText()).toEqual(main.invalidSizeImgText);
+        expect(element(by.css('#VideoElement')).isPresent()).toBe(true);
+        main.shareButton.click();
+        browser.sleep(2000);    
+        expect(element(by.css('#VideoElement')).isPresent()).toBe(true);
     });
+
 });
