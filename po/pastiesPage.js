@@ -10,21 +10,32 @@ class PastiesPage extends BasePage {
         this.pastiesExp = $$('tr.url>td:nth-child(2)');
         this.pastiesDesc = $$('tr.url>td:nth-child(3)');
         this.pastiesCopyButton = $$('tr.url copy-to-clipboard');
+        this.nextPageButton = $$('li.next-page>a');
     }
 
     getPastieLine(pastieID) {
-    	return this.pastiesID.each((element, index) => {
-            element.getText().then((text) => {
+        return this.pastiesID.reduce(function(acc, elem, ind) {
+            return elem.getText().then(function(text) {
                 if (text == pastieID) {
-                    return index;
+                    return acc + ind;
+                } else {
+                    return acc;
                 }
             });
-        });
+        }, '');
     }
 
     getExp(pastieID) {
-        let pastieLine = this.getPastieLine(pastieID);
-        return this.pastiesExp.get(pastieLine).getText();
+        return this.getPastieLine(pastieID)
+            .then((line) => {
+                if (line) {
+                    return this.pastiesExp.get(line).getText();
+                } else {
+                    this.nextPageButton.click();
+                    browser.sleep(3000);
+                    return this.getExp(pastieID);
+                }
+            });
     }
 
     choosePastie(pastieID) {

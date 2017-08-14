@@ -5,7 +5,7 @@ var HomePage=require('../po/homePage.js');
 var main = new HomePage();
 
 
-describe('upload file on main page', () => {
+xdescribe('upload file on main page', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
@@ -15,18 +15,18 @@ describe('upload file on main page', () => {
         browser.sleep(1000);
     });
 
-  
 
-    it('should open main page', function(){        
+
+    it('should open main page', function(){
         main.visit();
         expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/');
-             
-    }); 
-   
 
-    it('should upload valid txt file', function(){        
+    });
+
+
+    it('should upload valid txt file', function(){
         main.uploadUI('txt');
-    }); 
+    });
 
 
 });

@@ -32,7 +32,7 @@ class HomePage extends BasePage {
           .then(() => uploader(fileType))
           .then(() => {
             browser.sleep(3000);
-            //this.uploadButton.click()
+            this.uploadButton.click();
         });
     }
 }
