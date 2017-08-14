@@ -1,4 +1,5 @@
 const BasePage = require('./BasePage.js');
+const uploader = require('../support/uploadUI.js');
 
 class HomePage extends BasePage {
     constructor() {
@@ -22,6 +23,11 @@ class HomePage extends BasePage {
     }
     setDescription(text) {
         return this.descriptionField.sendKeys(text);
+    }
+
+    //fileType {txt, pic, video}
+    uploadUI(fileType) {
+        return uploader(fileType);
     }
 }
 module.exports = HomePage;

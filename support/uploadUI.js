@@ -10,15 +10,14 @@ var path = require('path');
 var filePaths = {
 	'pic': './filesToUpload/pic.jpg',
 	'txt': '',
-	'video': '',
-	'jsCode': ''
+	'video': ''
 };
 
 var upload = function(fileType) {
-	exec('./support/upload.exe', [path.resolve(__dirname, filePaths[fileType])], function(err, data) {  
+	exec('./support/upload.exe', [path.resolve(__dirname, filePaths[fileType])], function(err, data) {
         console.log(err);
-        console.log(data.toString());                       
-    });  
+        console.log(data.toString());
+    });
 };
 
 module.exports = upload;
