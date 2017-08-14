@@ -19,8 +19,7 @@ describe('upload file on main page', () => {
 
     afterEach(() => {
         browser.sleep(1000);
-    });
-  
+    });  
 
     it('should upload valid txt file', function(){   
         main.setExpirationDate('10min');
