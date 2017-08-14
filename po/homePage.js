@@ -17,8 +17,6 @@ class HomePage extends BasePage {
         }
     }
     setExpirationDate(expiration) {
-/*  this.expirationDropdown[expiration+""]
-*/
         return this.expirationDropdown['expiration' + expiration].click();
     }
     setDescription(text) {
@@ -27,7 +25,11 @@ class HomePage extends BasePage {
 
     //fileType {txt, pic, video}
     uploadUI(fileType) {
-        return uploader(fileType);
+        return this.uploadButton.click()
+          .then(() => uploader(fileType))
+          .then(() => {
+            browser.sleep(3000);
+            this.uploadButton.click()});
     }
 }
 module.exports = HomePage;
