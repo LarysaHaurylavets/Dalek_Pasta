@@ -12,13 +12,15 @@ class HomePage extends BasePage {
             expiration3d: element(by.xpath('//select/option[3]')),
             expiration7d: element(by.xpath('//select/option[4]')),
             expiration2w: element(by.xpath('//select/option[5]')),
-            expiration1m: element(by.xpath('//select/option[6]'))
+            expiration1mnth: element(by.xpath('//select/option[6]'))
         }
     }
-   setExpirationDate(expiration){
-        return expiration.click();
+    setExpirationDate(expiration) {
+/*  this.expirationDropdown[expiration+""]
+*/
+        return this.expirationDropdown['expiration' + expiration].click();
     }
-    setDescription(text){
+    setDescription(text) {
         return this.descriptionField.sendKeys(text);
     }
 }

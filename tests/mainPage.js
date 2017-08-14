@@ -5,7 +5,7 @@ var Helper = require('../support/Helper.js');
 var helper;
 
 // TEST (wull be removed)
-describe('Main page', () => {
+xdescribe('Main page', () => {
 
   beforeAll(() => {
     console.log("beforeAll");
