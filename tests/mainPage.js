@@ -4,7 +4,7 @@ var EC = protractor.ExpectedConditions;
 var Helper = require('../support/Helper.js');
 
 // TEST (wull be removed)
-xdescribe('Main page', () => {
+describe('Main page', () => {
 
   beforeAll(() => {
     console.log("beforeAll");
@@ -40,30 +40,36 @@ xdescribe('Main page', () => {
 
   });
 
-  it('should get and compare the images', () => {
-    // var compare = require('../support/imageComparator/fileComparator.js');
-    // browser.get('https://pasta.lab.epam.com/images/1jocRLYpE2iVM6HfMuMqg.png');
-    //
-    //
-    //
-    // var comparison = compare('./support/filesToUpload/disney_edit.png', './support/filesToUpload/disney_saved.png');
-    // expect(comparison).toBeTruthy();
-
-
-    browser.get('https://pasta.lab.epam.com/pasties/ytsddhqs');
-
+  it('should show the preview', () => {
+    browser.get('  https://pasta.lab.epam.com/pasties/rindr8ms');
     var ImagePage = require('../po/ImagePage.js');
     var imgPage = new ImagePage();
-    imgPage.getImageURL()
-      .then((url) => {
-        browser.get(url);
-      })
+    expect(imgPage.bigImageIsVisible()).toBeFalsy();
 
-    var saveIMG = require('../support/saveImage.js');
-    saveIMG('pic');
+    imgPage.showPreview();
+    expect(imgPage.bigImageIsVisible()).toBeTruthy();
 
-    browser.sleep(10000);
+    browser.sleep(1000);
+    imgPage.closePreview();
+    expect(imgPage.bigImageIsVisible()).toBeFalsy();
+  })
 
+  it('should get and compare the images', () => {
+    browser.get('https://pasta.lab.epam.com/pasties/ytsddhqs');
+
+   var ImagePage = require('../po/ImagePage.js');
+   var imgPage = new ImagePage();
+   var compare = require('../support/fileComparator.js');
+
+   imgPage.saveIMG()
+     .then(function (msg) {
+       console.log("image:", msg);
+       browser.sleep(10000)
+       .then(function () {
+         var comparison = compare('./filesToUpload/pic_downloaded.jpg', './filesToUpload/disney.png');
+         expect(comparison).toBeTruthy();
+       })
+     });
   });
 
   xit('should click on the header', () => {
