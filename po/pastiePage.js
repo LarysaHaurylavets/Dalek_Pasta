@@ -7,11 +7,11 @@ class PastiePage extends BasePage{
 	constructor(){
 		super();
 		this.url='pasties/date7kny';
-		this.linkField=element(by.css('p.url'));		
-		this.copyButton=element(by.css('copy-to-clipboard'));
-		this.contentBox=element(by.css('div.images'));
-		this.descText=element.all(by.css('input')).first();
-		//this.syntaxLabel=element(by.css('span.on-text'));
+		this.linkField = $('p.url');		
+		this.copyButton = $('copy-to-clipboard');
+		this.contentBox = $('div.images');
+		this.descText=$$('input').first();
+		
 	}
 
 	getLinkField(){
