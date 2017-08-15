@@ -20,7 +20,7 @@ describe('check contain on pastie page', () => {
    
     it('should open the pastie page', () => {
         page.visit();
-        expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/pasties/date7kny');
+        expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/pasties/j7ythffq');
 
     });
 
@@ -29,7 +29,7 @@ describe('check contain on pastie page', () => {
             console.log('Link field contains: ' + text);
            
          });
-         expect(page.getLinkField()).toEqual('https://pasta.lab.epam.com/pasties/date7kny');       
+         expect(page.getLinkField()).toEqual('https://pasta.lab.epam.com/pasties/j7ythffq');       
     });
 
     it('should check describe on pastie page', function(){        
@@ -47,7 +47,7 @@ describe('check contain on pastie page', () => {
         page.getLinkCopyButton().then((value)=>{
             console.log('Button copy contains link: ' + value);
         });
-        expect(page.getLinkCopyButton()).toEqual('https://pasta.lab.epam.com/pasties/date7kny');
+        expect(page.getLinkCopyButton()).toEqual('https://pasta.lab.epam.com/pasties/j7ythffq');
         
     });
 

@@ -6,7 +6,7 @@ class PastiePage extends BasePage{
 
 	constructor(){
 		super();
-		this.url='pasties/date7kny';
+		this.url='pasties/j7ythffq';
 		this.linkField = $('p.url');		
 		this.copyButton = $('copy-to-clipboard');
 		this.contentBox = $('div.images');
