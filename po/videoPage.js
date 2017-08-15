@@ -7,7 +7,9 @@ class VideoPage extends PastiePage {
 	constructor() {
 		super();
 		this.videoPlayer = element(by.css('#VideoElement'));
+		this.downloadButtonInPlayer = element(by.css('.fa-download'));
 	}
+
 	getVideoURL() {
 		return element(by.css('#VideoElement > source')).getAttribute("src");
 	}

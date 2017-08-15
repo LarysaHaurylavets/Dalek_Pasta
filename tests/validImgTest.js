@@ -3,6 +3,7 @@
 var EC = protractor.ExpectedConditions;
 var HomePage=require('../po/homePage.js');
 var PastiePage=require('../po/pastiePage.js');
+var helper = require('../support/Helper.js');
 var main = new HomePage();
 var pastiePage = new PastiePage();
 var ImagePage = require('../po/imagePage.js');
@@ -22,10 +23,14 @@ describe('upload file on main page', () => {
         browser.sleep(2000);
     });
 
-    it('should upload valid image file', function() {
-        main.uploadUI('pic');
-        expect(main.shareButton.isPresent()).toBe(true);
 
+    it('should upload valid image file', function() {
+      main.setExpirationDate('10min');
+      main.uploadUI('pic');
+  		helper.waitForVisible(main.shareButton)
+  		.then(() => {
+  		    expect(main.shareButton.isPresent()).toBe(true);
+  		})
     });
 
     it('should set description for image file', function() {
@@ -33,12 +38,11 @@ describe('upload file on main page', () => {
         expect(pastiePage.getDescText()).toEqual('Image file');
     });
 
-//TODO refactor
     it('should share valid image file', function() {
-       main.shareButton.click();
-        browser.wait(EC.elementToBeClickable(pastiePage.copyButton), 5000).then(()=>{
-            expect(pastiePage.copyButton.isPresent()).toBe(true);
-        })
+    	main.shareButton.click();
+		  helper.waitForClickable(pastiePage.copyButton).then(() => {
+    	   expect(pastiePage.copyButton.isPresent()).toBe(true);
+    	})
     });
 
     it('should show the preview', () => {
@@ -52,13 +56,13 @@ describe('upload file on main page', () => {
     });
 
 
+
     it('should provide the same quality images as uploaded one', function () {
       // download uploaded image
       imgPage.saveIMG()
         .then(function (msg) {
           console.log("image:", msg);
-          // helper.pauseFor(3000)
-          browser.sleep(3000)
+           helper.pauseFor(3000)
 
          .then(() => {
           var comparisonResult = compare('./filesToUpload/pic_downloaded.jpg', './filesToUpload/pic.jpg');

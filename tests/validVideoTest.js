@@ -1,27 +1,41 @@
 'use strict';
 
 var EC = protractor.ExpectedConditions;
-var HomePage = require('../po/HomePage.js');
+var HomePage = require('../po/homePage.js');
 var main = new HomePage();
-var PastiePage = require('../po/pastiePage.js');
-var page = new PastiePage();
+var VideoPage = require('../po/videoPage.js');
+var videoPg = new VideoPage();
+var helper = require('../support/Helper.js');
 
-xdescribe('upload valid video', () => {
+describe('upload valid video', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
-        browser.driver.manage().window().maximize();
     });
+
     beforeEach(() => {
         main.visit();
         expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/');
     });
+
     it('should upload a video', () => {
         main.uploadUI('video');
-        browser.wait(EC.elementToBeClickable(main.shareButton), 5000);
-        expect(element(by.css('#VideoElement')).isPresent()).toBe(true);
+        helper.waitForClickable(main.shareButton);
         main.shareButton.click();
-        browser.wait(EC.elementToBeClickable(page.copyButton), 5000);
+        expect(videoPg.videoPlayer.isPresent()).toBe(true);
+    });
+
+    // FAILED because of invalidnyu videoPlayer
+    xit('should download the video through Player', () => {
+        main.uploadUI('video');
+        expect(main.shareButton.isPresent()).toBe(true);
         expect(element(by.css('#VideoElement')).isPresent()).toBe(true);
+        helper.waitForAndClick(main.shareButton);
+        helper.waitForClickable(($('.info-bg')));
+        let expTitle = main.getPageTitle();
+        helper.hoverMouseOn(videoPg.videoPlayer);
+        videoPg.downloadButtonInPlayer.click();
+        browser.sleep(2000);
+        expect(browser.getTitle()).toEqual(expTitle);
     });
 });
