@@ -16,7 +16,6 @@ xdescribe('upload valid video', () => {
         main.visit();
         expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/');
     });
-
     it('should upload a video', () => {
         main.uploadUI('video');
         browser.wait(EC.elementToBeClickable(main.shareButton), 5000);
