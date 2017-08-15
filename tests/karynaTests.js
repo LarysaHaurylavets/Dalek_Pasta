@@ -11,7 +11,7 @@ var pastiesPage = new PastiesPage();
 const PastiePage = require('../po/pastiePage');
 var pastiePage = new PastiePage();
 
-xdescribe('expiration date', () => {
+describe('expiration date', () => {
 
     var ID,
         expectedExpDate,
@@ -33,6 +33,7 @@ xdescribe('expiration date', () => {
         main.setExpirationDate('10min')
             .then(() => main.setDescription('new'))
             .then(() => main.uploadUI('txt'))
+            .then(() => main.shareGo())
             .then(() => {
                 nowDate = moment().format('DD-MM-YYYY h:mm');
                 expectedExpDate = moment().add(10, 'm').format('DD-MM-YYYY h:mm');
@@ -45,14 +46,15 @@ xdescribe('expiration date', () => {
                 browser.sleep(1000);
                 return pastiesPage.getExp(ID);
             }).then((act) => {
-                expect(act).toContain(expectedExpDate,`test execution date ${nowDate} + 10min = ${expectedExpDate}, but recieved expiration is ${act}`);
+                expect(act).toContain(expectedExpDate,`test execution date ${nowDate} + 10min = ${expectedExpDate}, but recieved expiration for pastie with ID ${ID} is ${act}`);
             });
     });
 
-    it('should display expiration date for 1d', () => {
+    xit('should display expiration date for 1d', () => {
         main.setExpirationDate('1d')
             .then(() => main.setDescription('new'))
             .then(() => main.uploadUI('txt'))
+            .then(() => main.uploadGo())
             .then(() => {
                 nowDate = moment().format('DD-MM-YYYY h:mm');
                 expectedExpDate = moment().add(1, 'd').format('DD-MM-YYYY h:mm');
@@ -69,10 +71,11 @@ xdescribe('expiration date', () => {
             });
     });
 
-    it('should display expiration date for 3d', () => {
+    xit('should display expiration date for 3d', () => {
         main.setExpirationDate('3d')
             .then(() => main.setDescription('new'))
             .then(() => main.uploadUI('txt'))
+            .then(() => main.uploadGo())
             .then(() => {
                 nowDate = moment().format('DD-MM-YYYY h:mm');
                 expectedExpDate = moment().add(3, 'd').format('DD-MM-YYYY h:mm');
@@ -89,10 +92,11 @@ xdescribe('expiration date', () => {
             });
     });
 
-    it('should display expiration date for 7d', () => {
+    xit('should display expiration date for 7d', () => {
         main.setExpirationDate('7d')
             .then(() => main.setDescription('new'))
             .then(() => main.uploadUI('txt'))
+            .then(() => main.uploadGo())
             .then(() => {
                 nowDate = moment().format('DD-MM-YYYY h:mm');
                 expectedExpDate = moment().add(7, 'd').format('DD-MM-YYYY h:mm');
@@ -109,10 +113,11 @@ xdescribe('expiration date', () => {
             });
     });
 
-    it('should display expiration date for 2w', () => {
+    xit('should display expiration date for 2w', () => {
         main.setExpirationDate('2w')
             .then(() => main.setDescription('new'))
             .then(() => main.uploadUI('txt'))
+            .then(() => main.uploadGo())
             .then(() => {
                 nowDate = moment().format('DD-MM-YYYY h:mm');
                 expectedExpDate = moment().add(2, 'w').format('DD-MM-YYYY h:mm');
@@ -129,10 +134,11 @@ xdescribe('expiration date', () => {
             });
     });
 
-    it('should display expiration date for 1month', () => {
+    xit('should display expiration date for 1month', () => {
         main.setExpirationDate('1mnth')
             .then(() => main.setDescription('new'))
             .then(() => main.uploadUI('txt'))
+            .then(() => main.uploadGo())
             .then(() => {
                 nowDate = moment().format('DD-MM-YYYY h:mm');
                 expectedExpDate = moment().add(1, 'M').format('DD-MM-YYYY h:mm');

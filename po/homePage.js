@@ -39,5 +39,9 @@ class HomePage extends BasePage {
     uploadGo() {
         return this.uploadButton.click();
     }
+
+    shareGo() {
+        return this.shareButton.click();
+    }
 }
 module.exports = HomePage;
