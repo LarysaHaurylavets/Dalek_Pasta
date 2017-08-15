@@ -10,7 +10,6 @@ var main = new HomePage();
 var PastiesPage = require('../po/pastiesPage.js');
 var pastiesPage = new PastiesPage();
 
-<<<<<<< HEAD
 const PastiePage = require('../po/pastiePage');
 var pastiePage = new PastiePage();
 
