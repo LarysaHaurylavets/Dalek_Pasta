@@ -6,7 +6,7 @@ var fs = require('fs');
 var filePaths = {
 	'pic': './filesToUpload/pic_downloaded.jpg',
 	'txt': './filesToUpload/code_downloaded.txt',
-	'video': '',
+	'video': './filesToUpload/video_downloaded.txt',
 	'invalid-pic': './filesToUpload/5mb.jpg'
 };
 
