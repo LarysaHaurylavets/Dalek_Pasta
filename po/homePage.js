@@ -29,7 +29,7 @@ class HomePage extends BasePage {
 
     //fileType {txt, pic, video}
     uploadUI(fileType) {
-        return this.uploadGo
+        return this.uploadGo()
           .then(() => uploader(fileType))
           .then(() => {
             browser.sleep(3000);
