@@ -43,6 +43,7 @@ describe('upload file on main page', () => {
     //    expect(pastiePage.copyButton.isPresent()).toBe(true);        
     // }); 
 
+
 //TODO refactor
     it('should share valid image file', function() {
        main.shareButton.click();
