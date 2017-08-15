@@ -7,7 +7,7 @@ var VideoPage = require('../po/videoPage.js');
 var videoPg = new VideoPage();
 var helper = require('../support/Helper.js');
 
-xdescribe('upload valid video', () => {
+describe('upload valid video', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
@@ -30,12 +30,11 @@ xdescribe('upload valid video', () => {
         main.uploadUI('video');
         expect(main.shareButton.isPresent()).toBe(true);
         expect(element(by.css('#VideoElement')).isPresent()).toBe(true);
-        browser.wait(EC.elementToBeClickable(main.shareButton), 5000);
-        main.shareButton.click();
-        browser.wait(EC.elementToBeClickable(($('.info-bg'))), 5000);
+        helper.waitForAndClick(main.shareButton);
+        helper.waitForClickable(($('.info-bg')));
         let expTitle = main.getPageTitle();
-        browser.actions().mouseMove(element(by.css('#VideoElement'))).perform();
-        element(by.css('.fa-download')).click();
+        helper.hoverMouseOn(videoPg.videoPlayer);
+        videoPg.downloadButtonInPlayer.click();
         browser.sleep(2000);
         expect(browser.getTitle()).toEqual(expTitle);
     });
