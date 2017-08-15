@@ -25,8 +25,8 @@ describe('upload valid video', () => {
         expect(videoPg.videoPlayer.isPresent()).toBe(true);
     });
 
-    // FAILED because of invalidnyu videoPlayer
-    xit('should download the video through Player', () => {
+    // FAILED because of videoPlayer issues
+    it('should download the video through Player', () => {
         main.uploadUI('video');
         expect(main.shareButton.isPresent()).toBe(true);
         expect(element(by.css('#VideoElement')).isPresent()).toBe(true);
