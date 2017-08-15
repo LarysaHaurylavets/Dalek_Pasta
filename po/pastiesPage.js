@@ -10,11 +10,7 @@ class PastiesPage extends BasePage {
         this.pastiesExp = $$('tr.url>td:nth-child(2)');
         this.pastiesDesc = $$('tr.url>td:nth-child(3)');
         this.pastiesCopyButton = $$('tr.url copy-to-clipboard');
-<<<<<<< HEAD
         this.nextPageButton = $$('li.next-page>a');
-=======
-        
->>>>>>> 88b52c4a941100e863fc6a439853f853b112a5d8
     }
 
     getPastieLine(pastieID) {
