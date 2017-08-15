@@ -25,18 +25,4 @@ xdescribe('upload valid video', () => {
         browser.wait(EC.elementToBeClickable(page.copyButton), 5000);
         expect(element(by.css('#VideoElement')).isPresent()).toBe(true);
     });
-
-    it('should download the video', () => {
-        main.uploadUI('video');
-        expect(main.shareButton.isPresent()).toBe(true);
-        expect(element(by.css('#VideoElement')).isPresent()).toBe(true);
-        browser.wait(EC.elementToBeClickable(main.shareButton), 5000);
-        main.shareButton.click();
-        browser.wait(EC.elementToBeClickable(($('.info-bg'))), 5000);
-        let expTitle = main.getPageTitle();
-        browser.actions().mouseMove(element(by.css('#VideoElement'))).perform();
-        element(by.css('.fa-download')).click();
-        browser.sleep(2000);
-        expect(browser.getTitle()).toEqual(expTitle);
-    });
 });
