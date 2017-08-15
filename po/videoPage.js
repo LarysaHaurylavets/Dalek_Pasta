@@ -8,6 +8,9 @@ class VideoPage extends PastiePage {
 		super();
 		this.videoPlayer = element(by.css('#VideoElement'));
 	}
+	getVideoURL() {
+		return element(by.css('#VideoElement > source')).getAttribute("src");
+	}
 }
 
 module.exports = VideoPage;
