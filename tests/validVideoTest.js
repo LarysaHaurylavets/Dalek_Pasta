@@ -6,11 +6,7 @@ var main = new HomePage();
 var PastiePage = require('../po/pastiePage.js');
 var page = new PastiePage();
 
-<<<<<<< HEAD
 xdescribe('upload valid video', () => {
-=======
-xdescribe('valid video tests', () => {
->>>>>>> b6029cb631f3a343c445f6b8db8e926907c81aca
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
