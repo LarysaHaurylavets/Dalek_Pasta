@@ -9,6 +9,10 @@ exports.config = {
     showTiming: true
   },
 
+  onPrepare: function () {
+  browser.driver.manage().window().maximize(); 
+},
+
   specs: ['tests/*.js'],
 
   multiCapabilities: [
