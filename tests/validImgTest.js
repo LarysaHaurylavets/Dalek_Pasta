@@ -3,6 +3,7 @@
 var EC = protractor.ExpectedConditions;
 var HomePage=require('../po/homePage.js');
 var PastiePage=require('../po/pastiePage.js');
+var helper = require('../support/Helper.js');
 var main = new HomePage();
 var pastiePage = new PastiePage();
 var ImagePage = require('../po/imagePage.js');
@@ -22,7 +23,9 @@ describe('upload file on main page', () => {
         browser.sleep(2000);
     });
 
+
     it('should upload valid image file', function() {
+        main.setExpirationDate('10min'); 
         main.uploadUI('pic');
         expect(main.shareButton.isPresent()).toBe(true);
 
@@ -32,6 +35,14 @@ describe('upload file on main page', () => {
         main.setDescription("Image file");
         expect(pastiePage.getDescText()).toEqual('Image file');
     });
+
+
+    // it('should share valid image file', function(){                  
+    //    main.shareButton.click(); 
+    //    helper.waitForClickable(pastiePage.copyButton, 5000);
+    //    expect(pastiePage.copyButton.isPresent()).toBe(true);        
+    // }); 
+
 
 //TODO refactor
     it('should share valid image file', function() {
@@ -50,6 +61,7 @@ describe('upload file on main page', () => {
       imgPage.closePreview();
       expect(imgPage.bigImageIsVisible()).toBeFalsy();
     });
+
 
 
     it('should provide the same quality images as uploaded one', function () {

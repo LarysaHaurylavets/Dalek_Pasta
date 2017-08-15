@@ -5,13 +5,14 @@ var HomePage=require('../po/homePage.js');
 var PastiePage=require('../po/pastiePage.js');
 var PastiesPage=require('../po/pastiesPage.js');
 var CodePage = require('../po/codePage.js');
+var helper = require('../support/Helper.js');
 var main = new HomePage();
 var pastiePage = new PastiePage();
 var pastiesPage = new PastiesPage();
 var codePage = new CodePage();
 
 
-xdescribe('upload file on main page', () => {
+describe('upload file on main page', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
@@ -19,8 +20,8 @@ xdescribe('upload file on main page', () => {
         expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/');
     });
 
-    afterEach(() => {
-        browser.sleep(1000);
+    afterEach(() => {        
+        helper.pauseFor(1000);
     });  
 
     it('should set description for txt file', function(){   
@@ -36,14 +37,13 @@ xdescribe('upload file on main page', () => {
     });        
 
     it('should share valid txt file', function(){   
-        main.shareButton.click();                
-        browser.wait(EC.elementToBeClickable(pastiePage.copyButton), 5000).then(()=>{
-            expect(pastiePage.copyButton.isPresent()).toBe(true);
-        });  
-        browser.wait(EC.elementToBeClickable(codePage.syntaxLabel), 5000).then(()=>{
-            expect(codePage.syntaxLabel.isPresent()).toBe(true);  
-        });      
-       
+        main.shareButton.click();      
+        helper.waitForClickable(pastiePage.copyButton, 5000);
+        expect(pastiePage.copyButton.isPresent()).toBe(true);
+
+        helper.waitForClickable(codePage.syntaxLabel, 5000);
+        expect(codePage.syntaxLabel.isPresent()).toBe(true);
+        
     }); 
 
 });

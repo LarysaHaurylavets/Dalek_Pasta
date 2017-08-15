@@ -6,9 +6,9 @@ class HomePage extends BasePage {
         super();
         this.uploadButton = element(by.cssContainingText('.share-button', 'Upload'));
         this.shareButton = element(by.cssContainingText('.share-button', 'Share'));
-        this.descriptionField = element(by.css('.input-description'));
-        this.contentBox = element(by.css('.workplace'));
-        this.invalidSizeAlert = element(by.css('.toast-warning'));
+        this.descriptionField = $('.input-description');
+        this.contentBox = $('.workplace');
+        this.invalidSizeAlert = $('.toast-warning');
         this.invalidSizeImgText = 'File size limit is 4MB';
         this.invalidSizeTxtText = 'Size limit for text is 500kB';
         this.expirationDropdown = {
@@ -38,6 +38,10 @@ class HomePage extends BasePage {
 
     uploadGo() {
         return this.uploadButton.click();
+    }
+
+    shareGo() {
+        return this.shareButton.click();
     }
 }
 module.exports = HomePage;
