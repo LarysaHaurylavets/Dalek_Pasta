@@ -29,12 +29,15 @@ class HomePage extends BasePage {
 
     //fileType {txt, pic, video}
     uploadUI(fileType) {
-        return this.uploadButton.click()
+        return this.uploadGo
           .then(() => uploader(fileType))
           .then(() => {
             browser.sleep(3000);
-            //this.shareButton.click();
         });
+    }
+
+    uploadGo() {
+        return this.uploadButton.click();
     }
 }
 module.exports = HomePage;
