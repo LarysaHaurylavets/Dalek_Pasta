@@ -8,10 +8,27 @@ class ImagePage extends PastiePage {
 		super();
 	}
 
+	showPreview() {
+		return helper.waitForAndClick(browser.$('img.content-image.ng-scope'));
+	}
+
+	closePreview() {
+		var bigImg = browser.$('img.fullscreen-image.ng-scope');
+		return helper.waitForAndClick(bigImg, helper.waitForVisible);
+	}
+
+	bigImageIsVisible() {
+		var modalWindow = browser.$('div.modal-window');
+		return modalWindow.getAttribute('style')
+			.then((text) => {
+				return (text === "display: block;")
+		})
+	}
+
   getImageURL() {
     var element = browser.$('div img.fullscreen-image.ng-scope');
       return helper.waitForPresence(element)
-        .then(()=> {
+    		.then(()=> {
           return element.getAttribute("src")
       })
   }
