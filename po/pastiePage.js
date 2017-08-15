@@ -11,7 +11,7 @@ class PastiePage extends BasePage{
 		this.copyButton=element(by.css('copy-to-clipboard'));
 		this.contentBox=element(by.css('div.images'));
 		this.descText=element.all(by.css('input')).first();
-		this.syntaxLabel=element(by.css('span.on-text'));
+		//this.syntaxLabel=element(by.css('span.on-text'));
 	}
 
 	getLinkField(){
