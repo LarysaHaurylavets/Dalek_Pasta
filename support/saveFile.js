@@ -6,8 +6,9 @@ var fs = require('fs');
 var filePaths = {
 	'pic': './filesToUpload/pic_downloaded.jpg',
 	'txt': './filesToUpload/code_downloaded.txt',
-	'video': '',
-	'invalid-pic': './filesToUpload/5mb.jpg'
+	'video': './filesToUpload/video.mp4',
+	'invalid-pic': './filesToUpload/5mb.jpg',
+	'invalid-txt': './filesToUpload/more-than-500kb.txt'
 };
 
 var save = function(fileType) {
