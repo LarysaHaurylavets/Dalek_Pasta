@@ -6,7 +6,7 @@ var codePage = new CodePage();
 var HomePage = require('../po/homePage.js');
 var main = new HomePage();
 
-describe('upload file on main page', () => {
+describe('checking code page', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
@@ -21,7 +21,6 @@ describe('upload file on main page', () => {
         browser.sleep(1000);
     });
 
-
     it('should identify JS syntax', function() {
 
       // check btn off
@@ -33,11 +32,11 @@ describe('upload file on main page', () => {
       expect(codePage.getTypes().count()).toEqual(0);
       expect(codePage.getStrings().count()).toEqual(0);
 
-      /* check btn on */
+        /* check btn on */
       codePage.clickSyntaxButton();
       expect(codePage.syntaxButtonIsOn()).toBeTruthy();
 
-        // all highlights are on
+        /* all highlights are on */
       expect(codePage.getComments().count()).toBeGreaterThan(0);
       expect(codePage.getTypes().count()).toBeGreaterThan(0);
       expect(codePage.getStrings().count()).toBeGreaterThan(0);

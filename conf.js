@@ -10,10 +10,41 @@ exports.config = {
   },
 
   onPrepare: function () {
-  browser.driver.manage().window().maximize(); 
+  browser.driver.manage().window().maximize();
 },
 
-  specs: ['tests/*.js'],
+  // specs: ['tests/*.js'],
+
+  suites: {
+    all: [
+      'tests/*.js'
+    ],
+
+    code: [
+        'tests/validTxtTest.js',
+        'tests/validCodeTests.js'
+    ] ,
+
+    image: [
+        'tests/validImgTest.js'
+    ],
+
+    pastie: [
+      'tests/pastiePageTest.js',
+      'tests/pastiesPageTests.js'
+    ],
+
+    video: [
+      'tests/validVideoTest.js'
+    ],
+
+    negative: [
+      'tests/invalidSizeFileTests.js'
+    ]
+
+  },
+
+
 
   multiCapabilities: [
     {

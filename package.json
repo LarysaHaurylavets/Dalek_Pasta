@@ -5,7 +5,15 @@
   "scripts": {
     "prestart": "webdriver-manager update",
     "start": "webdriver-manager start",
-    "test": "protractor conf.js"
+
+    "test": "protractor conf.js --suite all",
+
+    "code": "protractor conf.js --suite code",
+    "img": "protractor conf.js --suite image",
+    "video": "protractor conf.js --suite video",
+    "pastie": "protractor conf.js --suite pastie"
+
+
   },
   "author": "",
   "license": "ISC",

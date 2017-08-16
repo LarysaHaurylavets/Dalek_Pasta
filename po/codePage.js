@@ -23,11 +23,6 @@ class CodePage extends PastiePage{
 			.then((result) => { return result });
 	}
 
-//TODO implement
-	getRowsNum() {
-
-	}
-
 	getCodeContainer() {
 		return browser.$('.pastie-block.details-block');
 	}
