@@ -26,7 +26,6 @@ class PastiesPage extends BasePage {
             });
         }, '');
     }
-
     
 
     getExp(pastieID) {
