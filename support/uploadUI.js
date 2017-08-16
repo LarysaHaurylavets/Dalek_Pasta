@@ -12,7 +12,8 @@ var filePaths = {
 	'txt': './filesToUpload/text.txt',
 	'video': './filesToUpload/video.mp4',
 	'invalid-pic': './filesToUpload/5mb.jpg',
-	'invalid-txt': './filesToUpload/more-than-500kb.txt'
+	'invalid-txt': './filesToUpload/more-than-500kb.txt',
+	'javascript' : './filesToUpload/JS_code.txt'
 };
 
 var upload = function(fileType) {

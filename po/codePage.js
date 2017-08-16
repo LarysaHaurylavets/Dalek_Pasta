@@ -1,10 +1,65 @@
 const PastiePage = require('../po/pastiePage.js');
+var helper = require('../support/Helper.js');
 
 class CodePage extends PastiePage{
 	constructor(){
 		super();
-		this.syntaxLabel=element(by.css('span.on-text'));
+		// this.syntaxLabel=element(by.css('span.on-text'));
+		this.syntaxLabel = browser.$('.highlighting');
+
+
 	}
+
+	clickSyntaxButton() {
+		helper.waitForAndClick(this.syntaxLabel, helper.waitForVisible);
+	}
+
+	getSyntaxButton() {
+		return this.syntaxLabel;
+	}
+
+	syntaxButtonIsOn() {
+		return browser.$('.switch-toggle.ng-untouched.ng-valid.ng-dirty.ng-valid-parse.ng-not-empty').isPresent()
+			.then((result) => { return result });
+	}
+
+//TODO implement
+	getRowsNum() {
+
+	}
+
+	getCodeContainer() {
+		return browser.$('.pastie-block.details-block');
+	}
+
+	getCommentsColor() {
+		return this.getComments().first().getCssValue('color');
+	}
+
+	getStringsColor() {
+		return this.getStrings().first().getCssValue('color');
+	}
+
+	getTypesColor() {
+		return this.getTypes().first().getCssValue('color');
+	}
+
+
+
+	getComments() {
+		return this.getCodeContainer().$$('.ace_comment');
+	}
+
+	getStrings() {
+		return this.getCodeContainer().$$('.ace_string');
+	}
+
+	getTypes() {
+		return this.getCodeContainer().$$('.ace_type');
+	}
+
 }
+
+
 
 module.exports = CodePage;
