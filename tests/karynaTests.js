@@ -45,8 +45,8 @@ xdescribe('expiration date', () => {
             }).then(() => {
                 browser.sleep(1000);
                 return pastiesPage.getExp(ID);
-            }).then((act) => {
-                expect(act).toContain(expectedExpDate,`test execution date ${nowDate} + 10min = ${expectedExpDate}, but recieved expiration for pastie with ID ${ID} is ${act}`);
+            }).then((actualExpDate) => {
+                expect(actualExpDate).toContain(expectedExpDate,`test execution date ${nowDate} + 10min = ${expectedExpDate}, but recieved expiration for pastie with ID ${ID} is ${actualExpDate}`);
             });
     });
 
@@ -66,8 +66,8 @@ xdescribe('expiration date', () => {
             }).then(() => {
                 browser.sleep(1000);
                 return pastiesPage.getExp(ID);
-            }).then((act) => {
-                expect(act).toContain(expectedExpDate,`test execution date ${nowDate} + 1d = ${expectedExpDate}, but recieved expiration for pastie with ID ${ID} is ${act}`);
+            }).then((actualExpDate) => {
+                expect(actualExpDate).toContain(expectedExpDate,`test execution date ${nowDate} + 1d = ${expectedExpDate}, but recieved expiration for pastie with ID ${ID} is ${actualExpDate}`);
             });
     });
 
@@ -87,8 +87,8 @@ xdescribe('expiration date', () => {
             }).then(() => {
                 browser.sleep(1000);
                 return pastiesPage.getExp(ID);
-            }).then((act) => {
-                expect(act).toContain(expectedExpDate,`test execution date ${nowDate} + 3d = ${expectedExpDate}, but recieved expiration for pastie with ID ${ID} is ${act}`);
+            }).then((actualExpDate) => {
+                expect(actualExpDate).toContain(expectedExpDate,`test execution date ${nowDate} + 3d = ${expectedExpDate}, but recieved expiration for pastie with ID ${ID} is ${actualExpDate}`);
             });
     });
 
@@ -108,8 +108,8 @@ xdescribe('expiration date', () => {
             }).then(() => {
                 browser.sleep(1000);
                 return pastiesPage.getExp(ID);
-            }).then((act) => {
-                expect(act).toContain(expectedExpDate,`test execution date ${nowDate} + 7d = ${expectedExpDate}, but recieved expiration for pastie with ID ${ID} is ${act}`);
+            }).then((actualExpDate) => {
+                expect(actualExpDate).toContain(expectedExpDate,`test execution date ${nowDate} + 7d = ${expectedExpDate}, but recieved expiration for pastie with ID ${ID} is ${actualExpDate}`);
             });
     });
 
@@ -129,8 +129,8 @@ xdescribe('expiration date', () => {
             }).then(() => {
                 browser.sleep(1000);
                 return pastiesPage.getExp(ID);
-            }).then((act) => {
-                expect(act).toContain(expectedExpDate,`test execution date ${nowDate} + 2w = ${expectedExpDate}, but recieved expiration for pastie with ID ${ID} is ${act}`);
+            }).then((actualExpDate) => {
+                expect(actualExpDate).toContain(expectedExpDate,`test execution date ${nowDate} + 2w = ${expectedExpDate}, but recieved expiration for pastie with ID ${ID} is ${actualExpDate}`);
             });
     });
 
@@ -150,8 +150,8 @@ xdescribe('expiration date', () => {
             }).then(() => {
                 browser.sleep(1000);
                 return pastiesPage.getExp(ID);
-            }).then((act) => {
-                expect(act).toContain(expectedExpDate,`test execution date ${nowDate} + 1month = ${expectedExpDate}, but recieved expiration for pastie with ID ${ID} is ${act}`);
+            }).then((actualExpDate) => {
+                expect(actualExpDate).toContain(expectedExpDate,`test execution date ${nowDate} + 1month = ${expectedExpDate}, but recieved expiration for pastie with ID ${ID} is ${actualExpDate}`);
             });
     });
 });
