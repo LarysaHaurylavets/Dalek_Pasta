@@ -10,7 +10,8 @@ class PastiesPage extends BasePage {
         this.pastiesExp = $$('tr.url>td:nth-child(2)');
         this.pastiesDesc = $$('tr.url>td:nth-child(3)');
         this.pastiesCopyButton = $$('tr.url copy-to-clipboard');
-        this.nextPageButton = $$('li.next-page>a');        
+        this.nextPageButton = $$('li.next-page>a');   
+        this.prevPageButton = $('li.prev-page');     
     }
 
     getPastieLine(pastieID) {
@@ -59,6 +60,19 @@ class PastiesPage extends BasePage {
 
     getPastiesAmount() {
     	return this.pastiesID.count();
+    }
+
+    getDescription(pastieID) {
+        return this.getPastieLine(pastieID)
+            .then((line) => {
+                if (line) {
+                    return this.pastiesDesc.get(line).getText();
+                } else {
+                    this.nextPageButton.click();
+                    browser.sleep(3000);
+                    return this.getDescription(pastieID);
+                }
+            });
     }
 };
 
