@@ -3,18 +3,19 @@
 var EC = protractor.ExpectedConditions;
 var PastiePage = require('../po/pastiePage.js');
 var HomePage=require('../po/homePage.js');
+var helper = require('../support/Helper.js');
 var page = new PastiePage();
 var main = new HomePage();
 
 
-describe('check contain on pastie page', () => {
+xdescribe('check contain on pastie page', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
     });
 
     afterEach(() => {
-        browser.sleep(1000);
+        helper.pauseFor(1000);
     });
 
    

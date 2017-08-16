@@ -9,36 +9,39 @@ var header = require('../po/ui/Header.js');
 var page = new PastiePage();
 var main = new HomePage();
 var pastiesPage = new PastiesPage();
+var currentPastie = 'date7kny';
 
 
 describe('check contain on pasties page', () => {
 
     beforeAll(() => {
-        browser.waitForAngularEnabled(false);
-        main.visit();
-        expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/');
+        browser.waitForAngularEnabled(false);        
     });
 
     afterEach(() => {
-        pauseFor(1000);
+        helper.pauseFor(2000);
     });
 
+    it('should open the main page', () => {
+        main.visit();
+        expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/');
+    });
    
     it('should open the pasties page', () => {
         header.clickPasties();
-        expect(browser.getCurrentUrl()).toEqual('');
+        helper.pauseFor(1000);
+        expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/pasties/page/1');
+    });
+
+    it('should check button copy on pasties page', () => {      
+        expect(pastiesPage.getLinkCopyButton(currentPastie)).toEqual('https://pasta.lab.epam.com/pasties/date7kny');
     });
 
     it('should check ID sharing file', () => {
-    	let count=pastiesPage.getPastiesAmount();
-    	//expect(count).toEqual();
-        pastiesPage.choosePastie('');
-        //expect
-    });
-
-    it('should check button copy on pasties page', () => {    	
-        pastiesPage.getLinkCopyButton();
-        //expect(page.getLinkCopyButton()).toEqual('https://pasta.lab.epam.com/pasties/j7ythffq');
+    	var amount;        
+        expect(pastiesPage.getPastiesAmount()).toBe(10);    	
+        pastiesPage.choosePastie(currentPastie);
+        expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/pasties/date7kny');
     });
 
 });

@@ -12,7 +12,7 @@ var pastiesPage = new PastiesPage();
 var codePage = new CodePage();
 
 
-describe('upload file on main page', () => {
+xdescribe('upload file on main page', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
