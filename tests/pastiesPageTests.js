@@ -36,7 +36,6 @@ describe('check contain on pasties page', () => {
         expect(pastiesPage.getPastiesAmount()).toBe(10);  
     });
 
-
     it('should check ID sharing file', () => {        
         pastiesPage.pastiesID.first().getText().then((id)=>{
             pastiesPage.choosePastie(id);
