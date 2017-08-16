@@ -33,9 +33,15 @@ describe('check contain on pasties page', () => {
         expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/pasties/page/1');
     });
 
+    it('should check description on pasties page', () => {      
+        expect(pastiesPage.getDescription(currentPastie)).toEqual('Picture');
+    });
+    
     it('should check button copy on pasties page', () => {      
         expect(pastiesPage.getLinkCopyButton(currentPastie)).toEqual('https://pasta.lab.epam.com/pasties/date7kny');
     });
+
+   
 
     it('should check ID sharing file', () => {
     	var amount;        

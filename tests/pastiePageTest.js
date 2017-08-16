@@ -26,28 +26,28 @@ xdescribe('check contain on pastie page', () => {
     });
 
     it('should check link on pastie page', function(){
-         page.getLinkField().then((text)=>{
-            console.log('Link field contains: ' + text);
+         // page.getLinkField().then((text)=>{
+         //    console.log('Link field contains: ' + text);
            
-         });
+         // });
          expect(page.getLinkField()).toEqual('https://pasta.lab.epam.com/pasties/j7ythffq');       
     });
 
     it('should check describe on pastie page', function(){        
     
-        page.getDescText().then((value)=>{
-            console.log('Describe field contains: ' + value);
+        // page.getDescText().then((value)=>{
+        //     console.log('Describe field contains: ' + value);
 
-        });
-        expect(page.getDescText()).toEqual('Picture');      
+        // });
+        expect(page.getDescText()).toEqual('Description');      
     }); 
 
 
     it('should check button copy on pastie page', function(){
         page.clickCopyButton();
-        page.getLinkCopyButton().then((value)=>{
-            console.log('Button copy contains link: ' + value);
-        });
+        // page.getLinkCopyButton().then((value)=>{
+        //     console.log('Button copy contains link: ' + value);
+        // });
         expect(page.getLinkCopyButton()).toEqual('https://pasta.lab.epam.com/pasties/j7ythffq');
         
     });
