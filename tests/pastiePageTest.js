@@ -39,7 +39,7 @@ xdescribe('check contain on pastie page', () => {
             console.log('Describe field contains: ' + value);
 
         });
-        expect(page.getDescText()).toEqual('Picture');      
+        expect(page.getDescText()).toEqual('Description');      
     }); 
 
 
