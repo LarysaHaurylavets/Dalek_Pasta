@@ -8,7 +8,7 @@ var page = new PastiePage();
 var main = new HomePage();
 
 
-xdescribe('check contain on pastie page', () => {
+describe('check contain on pastie page', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
@@ -18,28 +18,28 @@ xdescribe('check contain on pastie page', () => {
         helper.pauseFor(1000);
     });
 
-   
+
     it('should open the pastie page', () => {
         page.visit();
         expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/pasties/j7ythffq');
 
     });
 
-    it('should check link on pastie page', function(){         
-        expect(page.getLinkField()).toEqual('https://pasta.lab.epam.com/pasties/j7ythffq');       
+    it('should check link on pastie page', function(){
+        expect(page.getLinkField()).toEqual('https://pasta.lab.epam.com/pasties/j7ythffq');
     });
 
-    it('should check describe on pastie page', function(){     
-        expect(page.getDescText()).toEqual('Description');      
-    }); 
+    it('should check describe on pastie page', function(){
+        expect(page.getDescText()).toEqual('Description');
+    });
 
 
     it('should check button copy on pastie page', function(){
-        page.clickCopyButton();       
+        page.clickCopyButton();
         expect(page.getLinkCopyButton()).toEqual('https://pasta.lab.epam.com/pasties/j7ythffq');
-        
+
     });
 
-    
+
 
 });

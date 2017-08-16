@@ -10,9 +10,10 @@
 
     "code": "protractor conf.js --suite code",
     "img": "protractor conf.js --suite image",
-    "video": "protractor conf.js --suite video",
-    "pastie": "protractor conf.js --suite pastie"
-
+    "vid": "protractor conf.js --suite video",
+    "pastie": "protractor conf.js --suite pastie",
+    "pasties": "protractor conf.js --suite pasties",
+    "neg": "protractor conf.js --suite negative"
 
   },
   "author": "",
