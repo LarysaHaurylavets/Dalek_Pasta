@@ -6,7 +6,7 @@ class PastiesPage extends BasePage {
 
     constructor() {
         super();
-        this.pastiesID = $$('tr.url a.pastie-link');
+        this.pastiesID = $$('a.pastie-link');        
         this.pastiesExp = $$('tr.url>td:nth-child(2)');
         this.pastiesDesc = $$('tr.url>td:nth-child(3)');
         this.pastiesCopyButton = $$('tr.url copy-to-clipboard');
@@ -26,6 +26,8 @@ class PastiesPage extends BasePage {
             });
         }, '');
     }
+
+    
 
     getExp(pastieID) {
         return this.getPastieLine(pastieID)

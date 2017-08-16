@@ -30,7 +30,7 @@ exports.config = {
     ],
 
     pastie: [
-      'tests/pastiePageTest.js',
+      //'tests/pastiePageTest.js',
       'tests/pastiesPageTests.js'
     ],
 
