@@ -30,28 +30,24 @@ describe('check contain on pasties page', () => {
     it('should open the pasties page', () => {
         header.clickPasties();
         helper.pauseFor(1000);
+        helper.waitForVisible(pastiesPage.prevPageButton);
+        helper.waitForClickable(pastiesPage.nextPageButton);
         expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/pasties/page/1');
     });
 
     it('should check description on pasties page', () => {      
         expect(pastiesPage.getDescription(currentPastie)).toEqual('Picture');
     });
-
-    it('should prev and next button on pasties page', () => {      
-        helper.waitForVisible(pastiesPage.prevPageButton);
-        helper.waitForClickable(pastiesPage.nextPageButton);
-    });
     
     it('should check button copy on pasties page', () => {      
         expect(pastiesPage.getLinkCopyButton(currentPastie)).toEqual('https://pasta.lab.epam.com/pasties/date7kny');
     });
-
    
-
     it('should check ID sharing file', () => {
     	var amount;        
         expect(pastiesPage.getPastiesAmount()).toBe(10);    	
         pastiesPage.choosePastie(currentPastie);
+        helper.pauseFor(1000);
         expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/pasties/date7kny');
     });
     
