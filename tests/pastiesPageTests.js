@@ -43,6 +43,7 @@ describe('check contain on pasties page', () => {
         pastiesPage.choosePastie(currentPastie);
         expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/pasties/date7kny');
     });
+    
 
 });
 
