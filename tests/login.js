@@ -16,12 +16,14 @@ describe('login', () => {
 
     it('should show an alert with defined text for invalid-size img', () => {
         browser.sleep(1000);
-    //    exec('./tests/login.exe', [browser.params.user, browser.params.pass], function(err, data) {
-    //        console.log(err);
-    //        console.log(data.toString());
-    //    });
-    console.log(browser.params.user, browser.params.pass);
-       browser.sleep(5000);
+        var user = browser.params.user;
+        var pass = browser.params.pass;
+       exec('./tests/login.exe', [user, pass], function(err, data) {
+           console.log(err);
+           console.log(data.toString());
+       });
+    console.log(user, pass);
+       browser.sleep(15000);
     });
 
 });
