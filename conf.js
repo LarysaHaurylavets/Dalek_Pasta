@@ -19,7 +19,7 @@ exports.config = {
 
   suites: {
     all: [
-      'tests/login.js'
+      'tests/*.js'
     ],
 
     code: [
