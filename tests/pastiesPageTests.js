@@ -31,15 +31,18 @@ describe('check contain on pasties page', () => {
         header.clickPasties();
         helper.pauseFor(1000);
         helper.waitForVisible(pastiesPage.prevPageButton);
-        helper.waitForClickable(pastiesPage.nextPageButton);
+        helper.waitForClickable(pastiesPage.nextPageButton);                  
         expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/pasties/page/1');
-        expect(pastiesPage.getPastiesAmount()).toBe(10);  
+        expect(pastiesPage.getPastiesAmount()).toBe(10);          
     });
 
     it('should check ID sharing file', () => {        
         pastiesPage.pastiesID.first().getText().then((id)=>{
             pastiesPage.choosePastie(id);
-        });               
+            helper.pauseFor(1000);
+            expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/pasties/' + id);
+        });        
+               
     });
 
 });
