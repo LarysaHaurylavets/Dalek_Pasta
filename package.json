@@ -5,7 +5,7 @@
   "scripts": {
     "prestart": "webdriver-manager update",
     "start": "webdriver-manager start",
-
+    "login" : "protractor conf.js --suite all --params",
     "test": "protractor conf.js --suite all",
 
     "code": "protractor conf.js --suite code",

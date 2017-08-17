@@ -13,11 +13,11 @@ exports.config = {
   browser.driver.manage().window().maximize();
 },
 
-  // specs: ['tests/*.js'],
+  //specs: ['tests/login.js'],
 
   suites: {
     all: [
-      'tests/*.js'
+      'tests/login.js'
     ],
 
     code: [
@@ -41,6 +41,10 @@ exports.config = {
 
     video: [
       'tests/validVideoTest.js'
+    ],
+
+    login: [
+        'tests/login.js'
     ],
 
     negative: [
