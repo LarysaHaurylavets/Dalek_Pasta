@@ -16,7 +16,7 @@ describe('login', () => {
 
     it('should show an alert with defined text for invalid-size img', () => {
         browser.sleep(1000);
-       exec('./tests/login.exe', [process.argv[2], process.argv[3]], function(err, data) {
+       exec('./tests/login.exe', [process.env.MY_USERNAME, process.env.MY_PASSWORD], function(err, data) {
            console.log(err);
            console.log(data.toString());
        });
