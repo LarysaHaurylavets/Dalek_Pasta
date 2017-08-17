@@ -43,6 +43,10 @@ exports.config = {
       'tests/validVideoTest.js'
     ],
 
+    login: [
+        'tests/login.js'
+    ],
+
     negative: [
       'tests/invalidSizeFileTest.js'
     ]
