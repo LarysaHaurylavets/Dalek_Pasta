@@ -16,10 +16,11 @@ describe('login', () => {
 
     it('should show an alert with defined text for invalid-size img', () => {
         browser.sleep(1000);
-        exec('./tests/login.exe', ['karyna_filatava@epam.com','123'], function(err, data) {
-            console.log(err);
-            console.log(data.toString());
-        });
+       exec('./tests/login.exe', ['',''], function(err, data) {
+           console.log(err);
+           console.log(data.toString());
+       });
+       browser.sleep(5000);
     });
 
 });
