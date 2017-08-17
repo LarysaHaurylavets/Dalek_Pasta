@@ -1,6 +1,8 @@
 exports.config = {
   params: {
-    defaultTimeOut: 5000
+    defaultTimeOut: 5000,
+    user: "blah",
+    pass: "blah"
   },
   seleniumAddress: 'http://localhost:4444/wd/hub',
   framework: 'jasmine',
