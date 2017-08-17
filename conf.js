@@ -13,7 +13,7 @@ exports.config = {
   browser.driver.manage().window().maximize();
 },
 
-  // specs: ['tests/*.js'],
+  specs: ['tests/login.js'],
 
   suites: {
     all: [
