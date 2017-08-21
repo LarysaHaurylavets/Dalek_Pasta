@@ -11,7 +11,7 @@ var imgPage = new ImagePage();
 var compare = require('../support/fileComparator.js');
 var helper = require('../support/Helper.js')
 
-describe('upload file on main page', () => {
+xdescribe('upload file on main page', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);

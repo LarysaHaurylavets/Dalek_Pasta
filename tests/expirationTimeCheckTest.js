@@ -11,7 +11,7 @@ var pastiesPage = new PastiesPage();
 const PastiePage = require('../po/pastiePage');
 var pastiePage = new PastiePage();
 
-describe('expiration date', () => {
+xdescribe('expiration date', () => {
 
     var ID,
         expectedExpDate,

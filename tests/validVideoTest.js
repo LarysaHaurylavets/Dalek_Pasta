@@ -7,7 +7,7 @@ var VideoPage = require('../po/videoPage.js');
 var videoPg = new VideoPage();
 var helper = require('../support/Helper.js');
 
-describe('upload valid video', () => {
+xdescribe('upload valid video', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);

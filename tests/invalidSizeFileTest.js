@@ -8,6 +8,8 @@ describe('invalid files tests', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
+        main.visit();
+        main.login();
     });
 
     beforeEach(() => {

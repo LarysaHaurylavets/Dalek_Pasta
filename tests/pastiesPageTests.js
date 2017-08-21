@@ -12,10 +12,10 @@ var pastiesPage = new PastiesPage();
 var ID = pastiesPage.pastiesID.first();
 
 
-describe('check contain on pasties page', () => {
+xdescribe('check contain on pasties page', () => {
 
     beforeAll(() => {
-        browser.waitForAngularEnabled(false);        
+        browser.waitForAngularEnabled(false);
     });
 
     afterEach(() => {
@@ -26,26 +26,23 @@ describe('check contain on pasties page', () => {
         main.visit();
         expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/');
     });
-   
+
     it('should open the pasties page', () => {
         header.clickPasties();
         helper.pauseFor(1000);
         helper.waitForVisible(pastiesPage.prevPageButton);
-        helper.waitForClickable(pastiesPage.nextPageButton);                  
+        helper.waitForClickable(pastiesPage.nextPageButton);
         expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/pasties/page/1');
-        expect(pastiesPage.getPastiesAmount()).toBe(10);          
+        expect(pastiesPage.getPastiesAmount()).toBe(10);
     });
 
-    it('should check ID sharing file', () => {        
+    it('should check ID sharing file', () => {
         pastiesPage.pastiesID.first().getText().then((id)=>{
             pastiesPage.choosePastie(id);
             helper.pauseFor(1000);
             expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/pasties/' + id);
-        });        
-               
+        });
+
     });
 
 });
-
-
-
