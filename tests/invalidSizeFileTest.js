@@ -11,9 +11,11 @@ describe('invalid files tests', () => {
         console.log("!!!!!!! BEFORE ALL VISIT called");
         main.visit();
         browser.sleep(5000);
-        main.login(done);
+        main.login();
         console.log("!!!!!!! BEFORE ALL LOGIN end");
-        browser.sleep(10000);
+        setTimeout(function() {
+           done();
+       }, 10000);
     }, 60000);
 
     beforeEach(() => {
