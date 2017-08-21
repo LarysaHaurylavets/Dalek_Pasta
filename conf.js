@@ -1,6 +1,8 @@
 exports.config = {
   params: {
-    defaultTimeOut: 5000
+    defaultTimeOut: 5000,
+    user: "blah",
+    pass: "blah"
   },
   seleniumAddress: 'http://localhost:4444/wd/hub',
   framework: 'jasmine',
@@ -17,7 +19,7 @@ exports.config = {
 
   suites: {
     all: [
-      'tests/login.js'
+      'tests/*.js'
     ],
 
     code: [
@@ -44,7 +46,7 @@ exports.config = {
     ],
 
     login: [
-        'tests/login.js'
+        'support/login.js'
     ],
 
     negative: [
