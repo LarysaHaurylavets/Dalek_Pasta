@@ -46,7 +46,7 @@ exports.config = {
     ],
 
     login: [
-        'tests/login.js'
+        'support/login.js'
     ],
 
     negative: [
