@@ -13,8 +13,8 @@
     "vid": "protractor conf.js --suite video",
     "pastie": "protractor conf.js --suite pastie",
     "pasties": "protractor conf.js --suite pasties",
-    "neg": "protractor conf.js --suite negative"
-
+    "neg": "protractor conf.js --suite negative" 
+    
   },
   "author": "",
   "license": "ISC",
