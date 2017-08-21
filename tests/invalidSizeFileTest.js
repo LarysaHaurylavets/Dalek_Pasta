@@ -6,12 +6,12 @@ var main = new HomePage();
 
 describe('invalid files tests', () => {
 
-    beforeAll(() => {
+    beforeAll((done) => {
         browser.waitForAngularEnabled(false);
         console.log("!!!!!!! BEFORE ALL VISIT called");
         main.visit();
         browser.sleep(5000);
-        main.login();
+        main.login(done);
         console.log("!!!!!!! BEFORE ALL LOGIN end");
         browser.sleep(10000);
     }, 60000);
