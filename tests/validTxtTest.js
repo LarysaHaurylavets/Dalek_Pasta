@@ -16,15 +16,15 @@ describe('upload file on main page', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
-        console.log("!!!!!!! BEFORE ALL VISIT called");
-        main.visit();
+        //console.log("!!!!!!! BEFORE ALL VISIT called");
+        //main.visit();
         browser.sleep(5000);
-        main.login();
+        //main.login();
         console.log("!!!!!!! BEFORE ALL LOGIN end");
     //     setTimeout(function() {
     //        done();
     //    }, 10000);
-},60000);
+    });
 
     afterEach(() => {
         helper.pauseFor(1000);
