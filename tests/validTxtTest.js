@@ -17,7 +17,7 @@ describe('upload file on main page', () => {
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
         //console.log("!!!!!!! BEFORE ALL VISIT called");
-        //main.visit();
+        main.visit();
         browser.sleep(5000);
         //main.login();
         console.log("!!!!!!! BEFORE ALL LOGIN end");
