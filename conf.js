@@ -1,6 +1,6 @@
 exports.config = {
   params: {
-    defaultTimeOut: 5000,
+    defaultTimeOut: 15000,
     user: "blah",
     pass: "blah"
   },
