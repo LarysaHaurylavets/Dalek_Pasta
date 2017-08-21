@@ -17,6 +17,6 @@ describe('login', () => {
            console.log(err);
            console.log(data.toString());
        });
-       browser.sleep(10000);
+       return browser.sleep(10000);
     });
 });
