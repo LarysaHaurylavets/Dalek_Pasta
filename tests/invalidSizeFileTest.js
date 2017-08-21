@@ -6,11 +6,11 @@ var main = new HomePage();
 
 describe('invalid files tests', () => {
 
-    beforeAll((done) => {
+    beforeAll(() => {
         browser.waitForAngularEnabled(false);
         main.visit();
         main.login();
-        done();
+
     });
 
     beforeEach(() => {
