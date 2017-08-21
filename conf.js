@@ -1,18 +1,14 @@
 exports.config = {
-  params: {
-    defaultTimeOut: 1000,
-    user: "blah",
-    pass: "blah"
-  },
   seleniumAddress: 'http://localhost:4444/wd/hub',
   framework: 'jasmine',
   jasmineNodeOpts: {
-    defaultTimeoutInterval: 30000,
+    defaultTimeoutInterval: 15000,
     showTiming: true
   },
 
   onPrepare: function () {
   browser.driver.manage().window().maximize();
+  browser.waitForAngularEnabled(false);
 },
 
   //specs: ['tests/login.js'],
