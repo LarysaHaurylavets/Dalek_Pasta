@@ -4,7 +4,7 @@ var EC = protractor.ExpectedConditions;
 var HomePage = require('../po/HomePage.js');
 var main = new HomePage();
 
-describe('invalid files tests', () => {
+xdescribe('invalid files tests', () => {
 
     beforeAll((done) => {
         browser.waitForAngularEnabled(false);

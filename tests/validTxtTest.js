@@ -12,13 +12,19 @@ var pastiesPage = new PastiesPage();
 var codePage = new CodePage();
 
 
-xdescribe('upload file on main page', () => {
+describe('upload file on main page', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
+        console.log("!!!!!!! BEFORE ALL VISIT called");
         main.visit();
-        expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/');
-    });
+        browser.sleep(5000);
+        main.login();
+        console.log("!!!!!!! BEFORE ALL LOGIN end");
+    //     setTimeout(function() {
+    //        done();
+    //    }, 10000);
+},60000);
 
     afterEach(() => {
         helper.pauseFor(1000);
