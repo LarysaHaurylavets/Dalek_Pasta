@@ -10,9 +10,10 @@ describe('invalid files tests', () => {
         browser.waitForAngularEnabled(false);
         console.log("!!!!!!! BEFORE ALL VISIT called");
         main.visit();
+        browser.sleep(5000);
         main.login();
         console.log("!!!!!!! BEFORE ALL LOGIN end");
-        browser.sleep(5000);
+        browser.sleep(10000);
     }, 60000);
 
     beforeEach(() => {
