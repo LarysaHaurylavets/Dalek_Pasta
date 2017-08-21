@@ -1,5 +1,5 @@
 'use strict';
-
+var exec = require('child_process').execFile;
 class BasePage {
 
   constructor() {
@@ -21,6 +21,16 @@ class BasePage {
 
   getUrl() {
       return browser.getCurrentUrl();
+  }
+
+  login() {
+      browser.driver.switchTo().activeElement();
+      browser.sleep(1000);
+     exec('./support/login.exe', function(err, data) {
+         console.log(err);
+         console.log(data.toString());
+     });
+     browser.sleep(1000);
   }
 
 }

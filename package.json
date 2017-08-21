@@ -5,7 +5,6 @@
   "scripts": {
     "prestart": "webdriver-manager update",
     "start": "webdriver-manager start",
-    "pretest" : "protractor conf.js --suite login",
     "test": "protractor conf.js --suite all",
 
     "code": "protractor conf.js --suite code",
@@ -13,8 +12,8 @@
     "vid": "protractor conf.js --suite video",
     "pastie": "protractor conf.js --suite pastie",
     "pasties": "protractor conf.js --suite pasties",
-    "neg": "protractor conf.js --suite negative" 
-    
+    "neg": "protractor conf.js --suite negative"
+
   },
   "author": "",
   "license": "ISC",
