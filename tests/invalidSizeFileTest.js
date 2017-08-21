@@ -8,7 +8,9 @@ describe('invalid files tests', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
+        console.log("!!!!!!! BEFORE ALL VISIT called");
         main.visit();
+        console.log("!!!!!!! BEFORE ALL LOGIN called");
         main.login();
         browser.sleep(5000);
     }, 60000);
