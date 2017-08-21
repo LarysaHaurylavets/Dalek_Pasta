@@ -6,6 +6,7 @@ var main = new HomePage();
 describe('login', () => {
 
     beforeAll(() => {
+        jasmine.DEFAULT_TIMEOUT_INTERVAL= 120000;
         main.visit();
     });
 
