@@ -38,13 +38,13 @@ class BasePage {
 
 
 
-	 login() {
-		exec('./login.exe', [process.env.MY_USER, process.env.MY_PASS], function(err, data) {
-			console.log(process.env.MY_USER.toString());
-			console.log(data.toString());
-		});
-		return browser.sleep(10000);
-	}
+	//  login() {
+	// 	exec('./login.exe', [process.env.MY_USER, process.env.MY_PASS], function(err, data) {
+	// 		console.log(process.env.MY_USER.toString());
+	// 		console.log(data.toString());
+	// 	});
+	// 	return browser.sleep(10000);
+	// }
 
 }
 module.exports = BasePage;

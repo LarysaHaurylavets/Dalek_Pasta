@@ -12,7 +12,7 @@ describe('login', () => {
     });
 
     it('should show an alert with defined text for invalid-size img', (done) => {
-      console.log("LGOIN.JS");
+      console.log("login.JS");
         // browser.driver.switchTo().activeElement();
         browser.sleep(2000);
        exec('./support/exe/login.exe', function(err, data) {
