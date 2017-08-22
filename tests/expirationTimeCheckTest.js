@@ -20,7 +20,7 @@ describe('expiration date', () => {
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
         main.visit();
-        //main.login();
+        main.login();
     });
 
     afterEach(() => {
