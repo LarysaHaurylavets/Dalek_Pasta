@@ -22,10 +22,10 @@ describe('expiration date', () => {
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
         main.visit();
-        login()
+        return login()
         // main.login()
         .then(function (result) {
-          return console.log("LOGIN RESULT:", result);
+          console.log("LOGIN RESULT:", result);
         });
     });
 
