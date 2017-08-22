@@ -1,19 +1,16 @@
 'use strict';
 const HomePage = require('../po/homePage.js');
-const PastiePage = require('../po/pastiePage.js');
 const ImagePage = require('../po/imagePage.js');
 const helper = require('../support/Helper.js');
 const compare = require('../support/fileComparator.js');
 
 describe('upload file on main page', () => {
     var main;
-    var pastiePage;
     var imgPage;
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
         main = new HomePage();
-        pastiePage = new PastiePage();
         imgPage = new ImagePage();
         main.visit();
     });
@@ -31,8 +28,8 @@ describe('upload file on main page', () => {
             });
         main.setDescription("Image file");
         main.shareButton.click();
-        helper.waitForClickable(pastiePage.copyButton).then(() => {
-            expect(pastiePage.copyButton.isPresent()).toBe(true);
+        helper.waitForClickable(imgPage.copyButton).then(() => {
+            expect(imgPage.copyButton.isPresent()).toBe(true);
         })
     });
 
