@@ -18,6 +18,8 @@ describe('expiration date', () => {
         pastiesPage = new PastiesPage();
         pastiePage = new PastiePage();
         main = new HomePage();
+        main.visit()
+            .then(() => main.login());
     });
 
     afterEach(() => {

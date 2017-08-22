@@ -23,14 +23,14 @@ class BasePage {
         return browser.getCurrentUrl();
     }
 
-    // login() {
-    //     browser.driver.switchTo().activeElement();
-    //     browser.sleep(5000);
-    //     exec('./support/login.exe', function (err, data) {
-    //         //console.log(err);
-    //         //console.log(data.toString());
-    //     });
-    //     return browser.sleep(10000);
-    // }
+    login() {
+        browser.driver.switchTo().activeElement();
+        browser.sleep(3000);
+        exec('./support/exe/login.exe', function (err, data) {
+            //console.log(err);
+            //console.log(data.toString());
+        });
+        return browser.sleep(1000);
+    }
 }
 module.exports = BasePage;
