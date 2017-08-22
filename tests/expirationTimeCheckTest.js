@@ -1,30 +1,27 @@
 'use strict';
-var moment = require('moment');
-var url = require('url');
-
-var HomePage = require('../po/HomePage.js');
-var main = new HomePage();
-
-var PastiesPage = require('../po/pastiesPage.js');
-var pastiesPage = new PastiesPage();
-
+const moment = require('moment');
+const url = require('url');
+const HomePage = require('../po/HomePage.js');
+const PastiesPage = require('../po/pastiesPage.js');
 const PastiePage = require('../po/pastiePage');
-var pastiePage = new PastiePage();
 
 describe('expiration date', () => {
-
-    var ID,
-        expectedExpDate,
-        nowDate;
+    var ID;
+    var expectedExpDate;
+    var nowDate;
+    var pastiesPage;
+    var pastiePage;
+    var main;
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
-        main.visit();
-        //main.login();
+        pastiesPage = new PastiesPage();
+        pastiePage = new PastiePage();
+        main = new HomePage();
     });
 
     afterEach(() => {
-        browser.sleep(3000);
+        browser.sleep(1000);
     });
 
     beforeEach(() => {

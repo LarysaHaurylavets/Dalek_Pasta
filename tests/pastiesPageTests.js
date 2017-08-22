@@ -1,17 +1,16 @@
 'use strict';
-const PastiePage = require('../po/pastiePage.js');
 const PastiesPage = require('../po/pastiesPage.js');
 const HomePage = require('../po/homePage.js');
 const helper = require('../support/Helper.js');
-var page = new PastiePage();
-var main = new HomePage();
-var pastiesPage = new PastiesPage();
-var ID = pastiesPage.pastiesID.first();
 
 describe('check contain on pasties page', () => {
+    var main;
+    var pastiesPage;
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
+        main = new HomePage();
+        pastiesPage = new PastiesPage();
     });
 
     afterEach(() => {
@@ -25,10 +24,9 @@ describe('check contain on pasties page', () => {
 
     it('should open the pasties page', () => {
         main.header.clickPasties();
-        helper.pauseFor(1000);
         helper.waitForVisible(pastiesPage.prevPageButton);
         helper.waitForClickable(pastiesPage.nextPageButton);
-        expect(browser.getCurrentUrl()).toEqual(
+        expect(pastiesPage.getUrl()).toEqual(
             'https://pasta.lab.epam.com/pasties/page/1');
         expect(pastiesPage.getPastiesAmount()).toBe(10);
     });
