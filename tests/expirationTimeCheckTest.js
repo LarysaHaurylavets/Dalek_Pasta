@@ -25,9 +25,8 @@ describe('expiration date', () => {
         login()
         // main.login()
         .then(function (result) {
-          console.log("LOGIN RESULT:", result);
+          return console.log("LOGIN RESULT:", result);
         });
-        return browser.sleep(5000);
     });
 
     afterEach(() => {
