@@ -27,14 +27,14 @@ class BasePage {
       return new Promise(function (resolve, reject)  {
         browser.sleep(8000);
         console.log("!!!!! RUN LOGIN SCRIPT");
-        // exec('./support/exe/login.exe', function (err, data) {
-        exec('./login.exe', function (err, data) {
+        exec('./support/exe/login.exe', function (err, data) {
+        // exec('./login.exe', function (err, data) {
             console.log(err);
             console.log(data.toString());
         });
         console.log("!!!!! SCRIPT FINISHED");
         browser.sleep(5000);
-        resolve("login passed");
+        resolve("login finished");
       });
     }
 
