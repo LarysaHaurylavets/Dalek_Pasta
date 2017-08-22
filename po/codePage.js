@@ -8,6 +8,11 @@ class CodePage extends PastiePage {
 		super();
 		// this.syntaxLabel=element(by.css('span.on-text'));
 		this.syntaxLabel = browser.$('.highlighting');
+		this.colors = {
+            'comments': 'rgba(35, 110, 36, 1)',
+            'types': 'rgba(147, 15, 128, 1)',
+            'strings': 'rgba(26, 26, 166, 1)'
+        };
 	}
 
 	clickSyntaxButton() {

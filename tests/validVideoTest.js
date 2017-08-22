@@ -1,16 +1,16 @@
 'use strict';
-
-var EC = protractor.ExpectedConditions;
-var HomePage = require('../po/homePage.js');
-var main = new HomePage();
-var VideoPage = require('../po/videoPage.js');
-var videoPg = new VideoPage();
-var helper = require('../support/Helper.js');
+const HomePage = require('../po/homePage.js');
+const VideoPage = require('../po/videoPage.js');
+const helper = require('../support/Helper.js');
 
 describe('upload valid video', () => {
+    var main;
+    var videoPg;
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
+        main = new HomePage();
+        videoPg = new VideoPage();
     });
 
     beforeEach(() => {
@@ -28,13 +28,13 @@ describe('upload valid video', () => {
     it('should download the video through Player', () => {
         main.uploadUI('video');
         expect(main.shareButton.isPresent()).toBe(true);
-        expect(element(by.css('#VideoElement')).isPresent()).toBe(true);
+        expect($('#VideoElement').isPresent()).toBe(true);
         helper.waitForAndClick(main.shareButton);
-        helper.waitForClickable(($('.info-bg')));
-        let expTitle = main.getPageTitle();
-        helper.hoverMouseOn(videoPg.videoPlayer);
-        videoPg.downloadButtonInPlayer.click();
-        browser.sleep(2000);
+
+        helper.waitForClickable(videoPg.copyButton);
+        let expTitle = videoPg.getPageTitle();
+        helper.hoverMouseOn(videoPg.videoPlayer); videoPg.downloadButtonInPlayer.click();
+        helper.pauseFor(2000);
         expect(browser.getTitle()).toEqual(expTitle);
     });
 });
