@@ -48,7 +48,7 @@ describe('expiration date', () => {
            console.log(data.toString());
        });
        browser.sleep(10000);
-       return resolve("LOGIN FINISHSHSHHFDF");
+       resolve("LOGIN FINISHSHSHHFDF");
      });
     }
 
