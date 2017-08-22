@@ -19,7 +19,7 @@ var save = function(fileType) {
 			fs.unlinkSync(pth);
 		}
 
-	exec('./support/ctrl-s.exe', [pth], function(err, data) {
+	exec('./support/exe/ctrl-s.exe', [pth], function(err, data) {
         //console.log(err);
         //console.log(data.toString());
     });

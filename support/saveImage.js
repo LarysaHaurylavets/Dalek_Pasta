@@ -10,7 +10,7 @@ var filePaths = {
 };
 
 var save = function(fileType) {
-	exec('./support/ctrl-s.exe', [path.resolve(__dirname, filePaths[fileType])], function(err, data) {
+	exec('./support/exe/ctrl-s.exe', [path.resolve(__dirname, filePaths[fileType])], function(err, data) {
         //console.log(err);
         //console.log(data.toString());
     });
