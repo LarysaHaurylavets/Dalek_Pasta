@@ -26,13 +26,13 @@ class BasePage {
     login() {
       return new Promise(function (resolve, reject)  {
         // browser.sleep(8000);
-        console.log("!!!!! RUN LOGIN SCRIPT");
+        console.log("run login script");
         exec('./support/exe/login.exe', function (err, data) {
         // exec('./login.exe', function (err, data) {
             console.log(err);
             console.log(data.toString());
         });
-        console.log("!!!!! SCRIPT FINISHED");
+        console.log("script finished");
         browser.sleep(3000);
         resolve("login finished");
       });
