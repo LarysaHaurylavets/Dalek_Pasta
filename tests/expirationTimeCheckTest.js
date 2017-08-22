@@ -33,7 +33,7 @@ describe('expiration date', () => {
     });
 
     beforeEach(() => {
-        main.visit();
+        // main.visit();
     });
 
     fit('should show an alert with defined text for invalid-size img', (done) => {
