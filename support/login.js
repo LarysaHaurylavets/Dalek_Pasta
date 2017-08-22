@@ -6,7 +6,7 @@ var main = new HomePage();
 describe('login', () => {
 
     beforeAll(() => {
-        
+
         //jasmine.DEFAULT_TIMEOUT_INTERVAL= 120000;
         main.visit();
     });
@@ -16,8 +16,8 @@ describe('login', () => {
         browser.driver.switchTo().activeElement();
         browser.sleep(1000);
        exec('./support/login.exe', function(err, data) {
-           console.log(err);
-           console.log(data.toString());
+           //console.log(err);
+           //console.log(data.toString());
        });
        browser.sleep(1000);
        done();

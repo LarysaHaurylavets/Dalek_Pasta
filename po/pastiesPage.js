@@ -1,17 +1,16 @@
 'use strict';
-
 const BasePage = require('./BasePage.js');
 
 class PastiesPage extends BasePage {
 
     constructor() {
         super();
-        this.pastiesID = $$('a.pastie-link');        
+        this.pastiesID = $$('a.pastie-link');
         this.pastiesExp = $$('tr.url>td:nth-child(2)');
         this.pastiesDesc = $$('tr.url>td:nth-child(3)');
         this.pastiesCopyButton = $$('tr.url copy-to-clipboard');
-        //this.nextPageButton = $$('li.next-page>a');   
-        this.prevPageButton = $('ul.pagination-items.prev');   
+        //this.nextPageButton = $$('li.next-page>a');
+        this.prevPageButton = $('ul.pagination-items.prev');
         this.nextPageButton = $('ul.pagination-items.next');
     }
 
@@ -26,7 +25,7 @@ class PastiesPage extends BasePage {
             });
         }, '');
     }
-    
+
 
     getExp(pastieID) {
         return this.getPastieLine(pastieID)
@@ -47,7 +46,6 @@ class PastiesPage extends BasePage {
     }
 
     getLinkCopyButton(pastieID) {
-    	
         return this.getPastieLine(pastieID)
             .then((line) => {
                 if (line) {
@@ -76,6 +74,6 @@ class PastiesPage extends BasePage {
                 }
             });
     }
-};
+}
 
 module.exports = PastiesPage;

@@ -1,17 +1,17 @@
+'use strict';
 const PastiePage = require('../po/pastiePage.js');
-var helper = require('../support/Helper.js');
+const helper = require('../support/Helper.js');
 
-class CodePage extends PastiePage{
-	constructor(){
+class CodePage extends PastiePage {
+
+	constructor() {
 		super();
 		// this.syntaxLabel=element(by.css('span.on-text'));
 		this.syntaxLabel = browser.$('.highlighting');
-
-
 	}
 
 	clickSyntaxButton() {
-		helper.waitForAndClick(this.syntaxLabel, helper.waitForVisible);
+		return helper.waitForAndClick(this.syntaxLabel, helper.waitForVisible);
 	}
 
 	getSyntaxButton() {
@@ -19,8 +19,12 @@ class CodePage extends PastiePage{
 	}
 
 	syntaxButtonIsOn() {
-		return browser.$('.switch-toggle.ng-untouched.ng-valid.ng-dirty.ng-valid-parse.ng-not-empty').isPresent()
-			.then((result) => { return result });
+		return browser.$(
+				'.switch-toggle.ng-untouched.ng-valid.ng-dirty.ng-valid-parse.ng-not-empty'
+			).isPresent()
+			.then((result) => {
+				return result
+			});
 	}
 
 	getCodeContainer() {
@@ -39,8 +43,6 @@ class CodePage extends PastiePage{
 		return this.getTypes().first().getCssValue('color');
 	}
 
-
-
 	getComments() {
 		return this.getCodeContainer().$$('.ace_comment');
 	}
@@ -52,9 +54,5 @@ class CodePage extends PastiePage{
 	getTypes() {
 		return this.getCodeContainer().$$('.ace_type');
 	}
-
 }
-
-
-
 module.exports = CodePage;

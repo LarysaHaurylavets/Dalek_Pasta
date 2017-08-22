@@ -8,7 +8,7 @@ var page = new PastiePage();
 var main = new HomePage();
 
 
-xdescribe('check contain on pastie page', () => {
+describe('check contain on pastie page', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);

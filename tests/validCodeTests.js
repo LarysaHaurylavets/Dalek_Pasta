@@ -6,7 +6,7 @@ var codePage = new CodePage();
 var HomePage = require('../po/homePage.js');
 var main = new HomePage();
 
-xdescribe('checking code page', () => {
+describe('checking code page', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);

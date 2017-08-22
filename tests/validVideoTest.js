@@ -7,7 +7,7 @@ var VideoPage = require('../po/videoPage.js');
 var videoPg = new VideoPage();
 var helper = require('../support/Helper.js');
 
-xdescribe('upload valid video', () => {
+describe('upload valid video', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
@@ -15,7 +15,6 @@ xdescribe('upload valid video', () => {
 
     beforeEach(() => {
         main.visit();
-        expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/');
     });
 
     it('should upload a video', () => {

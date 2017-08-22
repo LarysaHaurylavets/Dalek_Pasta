@@ -4,19 +4,16 @@ var EC = protractor.ExpectedConditions;
 var HomePage = require('../po/HomePage.js');
 var main = new HomePage();
 
-xdescribe('invalid files tests', () => {
+describe('invalid files tests', () => {
 
-    beforeAll((done) => {
+    beforeAll(() => {
         browser.waitForAngularEnabled(false);
-        console.log("!!!!!!! BEFORE ALL VISIT called");
+        //console.log("!!!!!!! BEFORE ALL VISIT called");
         main.visit();
         browser.sleep(5000);
-        main.login();
-        console.log("!!!!!!! BEFORE ALL LOGIN end");
-        setTimeout(function() {
-           done();
-       }, 10000);
-    }, 60000);
+        //main.login();
+        //console.log("!!!!!!! BEFORE ALL LOGIN end");
+    });
 
     beforeEach(() => {
         main.visit();

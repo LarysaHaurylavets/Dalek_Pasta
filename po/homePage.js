@@ -2,10 +2,13 @@ const BasePage = require('./BasePage.js');
 const uploader = require('../support/uploadUI.js');
 
 class HomePage extends BasePage {
+
     constructor() {
         super();
-        this.uploadButton = element(by.cssContainingText('.share-button', 'Upload'));
-        this.shareButton = element(by.cssContainingText('.share-button', 'Share'));
+        this.uploadButton = element(by.cssContainingText('.share-button',
+            'Upload'));
+        this.shareButton = element(by.cssContainingText('.share-button',
+            'Share'));
         this.descriptionField = $('.input-description');
         this.contentBox = $('.workplace');
         this.invalidSizeAlert = $('.toast-warning');
@@ -20,9 +23,11 @@ class HomePage extends BasePage {
             expiration1mnth: element(by.xpath('//select/option[6]'))
         }
     }
+
     setExpirationDate(expiration) {
         return this.expirationDropdown['expiration' + expiration].click();
     }
+    
     setDescription(text) {
         return this.descriptionField.sendKeys(text);
     }
@@ -30,10 +35,10 @@ class HomePage extends BasePage {
     //fileType {txt, pic, video}
     uploadUI(fileType) {
         return this.uploadGo()
-          .then(() => uploader(fileType))
-          .then(() => {
-            browser.sleep(3000);
-        });
+            .then(() => uploader(fileType))
+            .then(() => {
+                browser.sleep(3000);
+            });
     }
 
     uploadGo() {

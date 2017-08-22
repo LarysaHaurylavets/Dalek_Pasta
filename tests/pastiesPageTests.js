@@ -12,7 +12,7 @@ var pastiesPage = new PastiesPage();
 var ID = pastiesPage.pastiesID.first();
 
 
-xdescribe('check contain on pasties page', () => {
+describe('check contain on pasties page', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);

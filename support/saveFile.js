@@ -15,13 +15,13 @@ var save = function(fileType) {
 	var pth = path.resolve(__dirname, filePaths[fileType]);
 
 		if(fs.existsSync(pth)) {
-			console.log("file already exists, will be removed...");
+			//console.log("file already exists, will be removed...");
 			fs.unlinkSync(pth);
 		}
 
 	exec('./support/ctrl-s.exe', [pth], function(err, data) {
-        console.log(err);
-        console.log(data.toString());
+        //console.log(err);
+        //console.log(data.toString());
     });
 
 };

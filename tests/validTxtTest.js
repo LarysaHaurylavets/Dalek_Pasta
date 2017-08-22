@@ -20,7 +20,7 @@ describe('upload file on main page', () => {
         main.visit();
         browser.sleep(5000);
         //main.login();
-        console.log("!!!!!!! BEFORE ALL LOGIN end");
+        //console.log("!!!!!!! BEFORE ALL LOGIN end");
     //     setTimeout(function() {
     //        done();
     //    }, 10000);

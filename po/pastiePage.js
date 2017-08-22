@@ -1,35 +1,31 @@
 'use strict';
+const BasePage = require('./BasePage.js');
 
-const BasePage=require('./BasePage.js');
+class PastiePage extends BasePage {
 
-class PastiePage extends BasePage{
-
-	constructor(){
+	constructor() {
 		super();
-		this.url='pasties/jus7wnrw';
-		this.linkField = $('p.url');		
+		this.url = 'pasties/jus7wnrw';
+		this.linkField = $('p.url');
 		this.copyButton = $('copy-to-clipboard');
 		this.contentBox = $('div.images');
-		this.descText=$$('input').first();
-		
+		this.descText = $$('input').first();
 	}
 
-	getLinkField(){
+	getLinkField() {
 		return this.linkField.getText();
 	}
 
-	clickCopyButton(){
+	clickCopyButton() {
 		return this.copyButton.click();
 	}
 
-	getLinkCopyButton(){
+	getLinkCopyButton() {
 		return this.copyButton.getAttribute('copy-to-clipboard');
 	}
 
-	getDescText(){
+	getDescText() {
 		return this.descText.getAttribute('value');
 	}
 }
-module.exports=PastiePage;
-
-
+module.exports = PastiePage;
