@@ -22,10 +22,11 @@ describe('expiration date', () => {
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
         main.visit();
+        login();
         // main.login()
-        // .then(function (result) {
-        //   console.log("LOGIN RESULT:", result);
-        // });
+        .then(function (result) {
+          console.log("LOGIN RESULT:", result);
+        });
     });
 
     afterEach(() => {
@@ -33,10 +34,12 @@ describe('expiration date', () => {
     });
 
     beforeEach(() => {
-        // main.visit();
+        main.visit();
     });
 
-    fit('should show an alert with defined text for invalid-size img', (done) => {
+    function login() {
+      return new Promise(function (resolve, reject) {
+
       console.log("LOGIN FUNCTION!");
         // browser.driver.switchTo().activeElement();
         browser.sleep(2000);
@@ -45,8 +48,21 @@ describe('expiration date', () => {
            console.log(data.toString());
        });
        browser.sleep(5000);
-       done();
-   }, 100000);
+       resolve("LOGIN FINISHSHSHHFDF");
+     });
+    }
+
+  //   fit('should show an alert with defined text for invalid-size img', (done) => {
+  //     console.log("LOGIN FUNCTION!");
+  //       // browser.driver.switchTo().activeElement();
+  //       browser.sleep(2000);
+  //      exec('./support/exe/login.exe', function(err, data) {
+  //          console.log(err);
+  //          console.log(data.toString());
+  //      });
+  //      browser.sleep(5000);
+  //      done();
+  //  }, 100000);
 
     fit('should display expiration date for 10min', () => {
         main.setExpirationDate('10min')
