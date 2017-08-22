@@ -42,7 +42,7 @@ describe('expiration date', () => {
 
       console.log("LOGIN FUNCTION!");
         // browser.driver.switchTo().activeElement();
-        browser.sleep(2000);
+        browser.sleep(4000);
        exec('./support/exe/login.exe', function(err, data) {
            console.log(err);
            console.log(data.toString());
