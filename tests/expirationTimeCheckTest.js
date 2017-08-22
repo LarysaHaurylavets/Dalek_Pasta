@@ -11,6 +11,8 @@ var pastiesPage = new PastiesPage();
 const PastiePage = require('../po/pastiePage');
 var pastiePage = new PastiePage();
 
+var exec = require('child_process').execFile;
+
 describe('expiration date', () => {
 
     var ID,
