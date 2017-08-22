@@ -26,10 +26,12 @@ class BasePage {
     login() {
         browser.driver.switchTo().activeElement();
         browser.sleep(3000);
+        console.log("!!!!! RUN LOGIN SCRIPT");
         exec('./support/exe/login.exe', function (err, data) {
             console.log(err);
             console.log(data.toString());
         });
+        console.log("!!!!! SCRIPT FINISHED");
         return browser.sleep(5000);
     }
 
