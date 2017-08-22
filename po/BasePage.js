@@ -25,12 +25,13 @@ class BasePage {
 
     login() {
         browser.driver.switchTo().activeElement();
-        browser.sleep(5000);
+        browser.sleep(3000);
         exec('./support/login.exe', function (err, data) {
-            //console.log(err);
-            //console.log(data.toString());
+            console.log(err);
+            console.log(data.toString());
         });
-        return browser.sleep(10000);
+        return browser.sleep(5000);
     }
+    
 }
 module.exports = BasePage;
