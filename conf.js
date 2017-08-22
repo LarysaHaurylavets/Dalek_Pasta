@@ -20,7 +20,7 @@ exports.config = {
         all: [
             // 'tests/*.js'
             'support/login.js',
-            // 'tests/expirationTimeCheckTest.js'
+            'tests/expirationTimeCheckTest.js'
         ],
 
         code: [
