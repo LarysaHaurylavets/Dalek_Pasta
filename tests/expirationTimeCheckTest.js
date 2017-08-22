@@ -21,21 +21,11 @@ describe('expiration date', () => {
 
     beforeAll(() => {
         browser.waitForAngularEnabled(false);
-        main.visit();
-
-        fit('should show an alert with defined text for invalid-size img', (done) => {
-          console.log("LOGIN FUNCTION!");
-            // browser.driver.switchTo().activeElement();
-            browser.sleep(2000);
-           exec('./support/exe/login.exe', function(err, data) {
-               console.log(err);
-               console.log(data.toString());
-           });
-           browser.sleep(5000);
-           done();
-       }, 100000);
-
-        // main.login();
+        main.visit()
+        main.login()
+        .then(function (result) {
+          console.log("LOGIN RESULT:", result);
+        });
     });
 
     afterEach(() => {
