@@ -1,6 +1,6 @@
 'use strict';
-var exec = require('child_process').execFile;
-var path = require('path');
+const exec = require('child_process').execFile;
+const path = require('path');
 
 // usage
 //var uploader = require('../support/uploadUI');
@@ -13,14 +13,15 @@ var filePaths = {
 	'video': './filesToUpload/video.mp4',
 	'invalid-pic': './filesToUpload/5mb.jpg',
 	'invalid-txt': './filesToUpload/more-than-500kb.txt',
-	'javascript' : './filesToUpload/JS_code.txt'
+	'javascript': './filesToUpload/JS_code.txt'
 };
 
-var upload = function(fileType) {
-	exec('./support/exe/upload.exe', [path.resolve(__dirname, filePaths[fileType])], function(err, data) {
-        //console.log(err);
-        //console.log(data.toString());
-    });
+var upload = function (fileType) {
+	exec('./support/exe/upload.exe', [path.resolve(__dirname, filePaths[fileType])],
+		function (err, data) {
+			//console.log(err);
+			//console.log(data.toString());
+		});
 };
 
 module.exports = upload;

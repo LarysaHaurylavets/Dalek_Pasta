@@ -1,7 +1,7 @@
 'use strict';
-var exec = require('child_process').execFile;
-var path = require('path');
-var fs = require('fs');
+const exec = require('child_process').execFile;
+const path = require('path');
+const fs = require('fs');
 
 var filePaths = {
 	'pic': './filesToUpload/pic_downloaded.jpg',
@@ -11,20 +11,16 @@ var filePaths = {
 	'invalid-txt': './filesToUpload/more-than-500kb.txt'
 };
 
-var save = function(fileType) {
+var save = function (fileType) {
 	var pth = path.resolve(__dirname, filePaths[fileType]);
-
-		if(fs.existsSync(pth)) {
-			//console.log("file already exists, will be removed...");
-			fs.unlinkSync(pth);
-		}
-
-	exec('./support/exe/ctrl-s.exe', [pth], function(err, data) {
-        //console.log(err);
-        //console.log(data.toString());
-    });
-
+	if (fs.existsSync(pth)) {
+		//console.log("file already exists, will be removed...");
+		fs.unlinkSync(pth);
+	}
+	exec('./support/exe/ctrl-s.exe', [pth], function (err, data) {
+		//console.log(err);
+		//console.log(data.toString());
+	});
 };
-
 
 module.exports = save;
