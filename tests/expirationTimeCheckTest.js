@@ -24,7 +24,7 @@ describe('expiration date', () => {
         main.visit();
         browser.sleep(10000)
         .then(function functionName() {
-          login()
+          main.login()
         })
         .then(function (result) {
           console.log("LOGIN RESULT:", result);
@@ -40,20 +40,20 @@ describe('expiration date', () => {
         main.visit();
     });
 
-    function login() {
-      return new Promise(function (resolve, reject) {
-
-      console.log("LOGIN FUNCTION!");
-        // browser.driver.switchTo().activeElement();
-        browser.sleep(4000);
-       exec('./support/exe/login.exe', function(err, data) {
-           console.log(err);
-           console.log(data.toString());
-       });
-       browser.sleep(10000);
-       resolve("LOGIN FINISHSHSHHFDF");
-     });
-    }
+    // function login() {
+    //   return new Promise(function (resolve, reject) {
+    //
+    //   console.log("LOGIN FUNCTION!");
+    //     // browser.driver.switchTo().activeElement();
+    //     browser.sleep(4000);
+    //    exec('./support/exe/login.exe', function(err, data) {
+    //        console.log(err);
+    //        console.log(data.toString());
+    //    });
+    //    browser.sleep(10000);
+    //    resolve("LOGIN FINISHSHSHHFDF");
+    //  });
+    // }
 
   //   fit('should show an alert with defined text for invalid-size img', (done) => {
   //     console.log("LOGIN FUNCTION!");
