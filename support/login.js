@@ -11,7 +11,7 @@ describe('login', () => {
         main.visit();
     });
 
-    it('should show an alert with defined text for invalid-size img', (done) => {
+    it('should login', (done) => {
       console.log("login.JS");
         // browser.driver.switchTo().activeElement();
         browser.sleep(2000);
