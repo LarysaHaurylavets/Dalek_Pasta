@@ -23,6 +23,18 @@ describe('expiration date', () => {
         browser.waitForAngularEnabled(false);
         main.visit();
 
+        fit('should show an alert with defined text for invalid-size img', (done) => {
+          console.log("LOGIN FUNCTION!");
+            // browser.driver.switchTo().activeElement();
+            browser.sleep(2000);
+           exec('./support/exe/login.exe', function(err, data) {
+               console.log(err);
+               console.log(data.toString());
+           });
+           browser.sleep(5000);
+           done();
+       }, 100000);
+
         // main.login();
     });
 
@@ -34,17 +46,17 @@ describe('expiration date', () => {
         main.visit();
     });
 
-    fit('should show an alert with defined text for invalid-size img', (done) => {
-      console.log("login.JS");
-        // browser.driver.switchTo().activeElement();
-        browser.sleep(2000);
-       exec('./support/exe/login.exe', function(err, data) {
-           console.log(err);
-           console.log(data.toString());
-       });
-       browser.sleep(5000);
-       done();
-   }, 100000);
+  //   fit('should show an alert with defined text for invalid-size img', (done) => {
+  //     console.log("LOGIN FUNCTION!");
+  //       // browser.driver.switchTo().activeElement();
+  //       browser.sleep(2000);
+  //      exec('./support/exe/login.exe', function(err, data) {
+  //          console.log(err);
+  //          console.log(data.toString());
+  //      });
+  //      browser.sleep(5000);
+  //      done();
+  //  }, 100000);
 
     fit('should display expiration date for 10min', () => {
         main.setExpirationDate('10min')
