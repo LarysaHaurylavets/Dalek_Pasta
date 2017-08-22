@@ -1,16 +1,12 @@
 'use strict';
-
-var EC = protractor.ExpectedConditions;
-var PastiePage = require('../po/pastiePage.js');
-var PastiesPage = require('../po/pastiesPage.js');
-var HomePage=require('../po/homePage.js');
-var helper = require('../support/Helper.js');
-var header = require('../po/ui/Header.js');
+const PastiePage = require('../po/pastiePage.js');
+const PastiesPage = require('../po/pastiesPage.js');
+const HomePage = require('../po/homePage.js');
+const helper = require('../support/Helper.js');
 var page = new PastiePage();
 var main = new HomePage();
 var pastiesPage = new PastiesPage();
 var ID = pastiesPage.pastiesID.first();
-
 
 describe('check contain on pasties page', () => {
 
@@ -28,21 +24,21 @@ describe('check contain on pasties page', () => {
     });
 
     it('should open the pasties page', () => {
-        header.clickPasties();
+        main.header.clickPasties();
         helper.pauseFor(1000);
         helper.waitForVisible(pastiesPage.prevPageButton);
         helper.waitForClickable(pastiesPage.nextPageButton);
-        expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/pasties/page/1');
+        expect(browser.getCurrentUrl()).toEqual(
+            'https://pasta.lab.epam.com/pasties/page/1');
         expect(pastiesPage.getPastiesAmount()).toBe(10);
     });
 
     it('should check ID sharing file', () => {
-        pastiesPage.pastiesID.first().getText().then((id)=>{
+        pastiesPage.pastiesID.first().getText().then((id) => {
             pastiesPage.choosePastie(id);
             helper.pauseFor(1000);
-            expect(browser.getCurrentUrl()).toEqual('https://pasta.lab.epam.com/pasties/' + id);
+            expect(browser.getCurrentUrl()).toEqual(
+                'https://pasta.lab.epam.com/pasties/' + id);
         });
-
     });
-
 });

@@ -20,38 +20,28 @@ exports.config = {
         all: [
             'tests/*.js'
         ],
-
         code: [
             'tests/validTxtTest.js',
             'tests/validCodeTests.js'
         ],
-
         image: [
             'tests/validImgTest.js'
         ],
-
         pastie: [
-
             'tests/pastiePageTest.js',
         ],
-
         pasties: [
-
             'tests/pastiesPageTests.js'
         ],
-
         video: [
             'tests/validVideoTest.js'
         ],
-
         login: [
             'support/login.js'
         ],
-
         negative: [
             'tests/invalidSizeFileTest.js'
         ]
-
     },
 
     multiCapabilities: [{
@@ -61,6 +51,5 @@ exports.config = {
                 args: ['--window-size=1524,1068', '--disable-infobars']
             }
         }
-
     ]
 }
