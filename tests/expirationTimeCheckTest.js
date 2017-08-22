@@ -31,7 +31,7 @@ describe('expiration date', () => {
         main.visit();
     });
 
-    it('should display expiration date for 10min', () => {
+    iit('should display expiration date for 10min', () => {
         main.setExpirationDate('10min')
             .then(() => main.setDescription('new'))
             .then(() => main.uploadUI('txt'))
