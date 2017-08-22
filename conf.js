@@ -19,6 +19,7 @@ exports.config = {
     suites: {
         all: [
             // 'tests/*.js'
+            'support/login.js',
             'tests/expirationTimeCheckTest.js'
         ],
 
