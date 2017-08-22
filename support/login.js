@@ -12,12 +12,12 @@ describe('login', () => {
     });
 
     it('should show an alert with defined text for invalid-size img', (done) => {
-
-        browser.driver.switchTo().activeElement();
-        browser.sleep(1000);
+      console.log("LGOIN.JS");
+        // browser.driver.switchTo().activeElement();
+        browser.sleep(2000);
        exec('./support/exe/login.exe', function(err, data) {
-           //console.log(err);
-           //console.log(data.toString());
+           console.log(err);
+           console.log(data.toString());
        });
        browser.sleep(1000);
        done();
