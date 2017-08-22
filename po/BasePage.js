@@ -25,7 +25,7 @@ class BasePage {
 
     login() {
         browser.driver.switchTo().activeElement();
-        browser.sleep(3000);
+        browser.sleep(8000);
         console.log("!!!!! RUN LOGIN SCRIPT");
         // exec('./support/exe/login.exe', function (err, data) {
         exec('./login.exe', function (err, data) {
